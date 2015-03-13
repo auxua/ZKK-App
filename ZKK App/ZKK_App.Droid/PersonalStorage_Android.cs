@@ -29,7 +29,7 @@ namespace ZKK_App.Droid
             
             foreach (string s in liste)
             {
-                Console.WriteLine("Asset Found: " + s);
+                //Console.WriteLine("Asset Found: " + s);
                 try
                 {
                     var path = this.GetFullFilePath(s);
@@ -39,7 +39,7 @@ namespace ZKK_App.Droid
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("not possible: " + e.Message);
+                    //Console.WriteLine("not possible: " + e.Message);
                 }
             }
 

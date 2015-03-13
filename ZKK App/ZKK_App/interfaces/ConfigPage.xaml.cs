@@ -34,7 +34,7 @@ namespace ZKK_App.interfaces
 
         public ConfigPage()
         {
-            InitializeComponent();
+            //InitializeComponent();
 
             //Create a Picker for the Conference
             Picker picker = new Picker
@@ -52,7 +52,7 @@ namespace ZKK_App.interfaces
 
             //Not best, but working:
             //Convert the string enum-representation into the enum and convert it to the ord-int.
-            int selected = (int)Enum.Parse(typeof(Conferences), (string)Application.Current.Properties["Conference"], true);
+            int selected = (int)Enum.Parse(typeof(Conferences), (string)Application.Current.Properties[Settings.PropertyConferenceSelection], true);
 
             //The picker starts at 0, the enum at 1
             selected--;
@@ -70,7 +70,7 @@ namespace ZKK_App.interfaces
                     string cName = picker.Items[picker.SelectedIndex];
                     //save somewhere...
                     //Conferences conf = nameToConf[cName];
-                    Application.Current.Properties["Conference"] = cName;
+                    Application.Current.Properties[Settings.PropertyConferenceSelection] = cName;
                 }
             };
 
@@ -82,7 +82,7 @@ namespace ZKK_App.interfaces
             };
 
             //Current value of NewsOnline-property
-            bool newsOnline = (Application.Current.Properties["NewsSource"].Equals("Online"));
+            bool newsOnline = (Application.Current.Properties[Settings.PropertyNewsSource].Equals("Online"));
 
             //Initial Value in UI
             NewsSwitch.IsToggled = newsOnline;
@@ -92,9 +92,9 @@ namespace ZKK_App.interfaces
             {
                 newsOnline = (!newsOnline);
                 if (newsOnline)
-                    Application.Current.Properties["NewsSource"] = "Online";
+                    Application.Current.Properties[Settings.PropertyNewsSource] = "Online";
                 else
-                    Application.Current.Properties["NewsSource"] = "Offline";
+                    Application.Current.Properties[Settings.PropertyNewsSource] = "Offline";
             };
 
             //The label for the DatenStand
@@ -102,7 +102,7 @@ namespace ZKK_App.interfaces
             {
                 XAlign = TextAlignment.Center,
                 FontAttributes = FontAttributes.Italic,
-                Text = "Datenstand: " + (string)Application.Current.Properties["Datenstand"] + "\n "
+                Text = "Datenstand: " + (string)Application.Current.Properties[Settings.PropertyUpdateDate] + "\n "
             };
 
             //The Label for the Updates

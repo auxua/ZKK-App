@@ -15,6 +15,10 @@ namespace ZKK_App.places
     {
         List<PlaceItem> database;
 
+        /// <summary>
+        /// A Database for the Places of the conference
+        /// 
+        /// </summary>
         public PlacesDB()
         {
             //import from file
@@ -35,9 +39,9 @@ namespace ZKK_App.places
                 if (words.Count() == 4)
                 {
                     PlaceItem p = new PlaceItem();
-                    p.Comment = words[3];
+                    p.Comment = words[3].Replace(Settings.LineBreakEscape, "\n");
                     p.Imagename = words[1];
-                    p.Rooms = words[2];
+                    p.Rooms = words[2].Replace(Settings.LineBreakEscape, "\n");
                     p.Title = words[0];
 
                     database.Add(p);

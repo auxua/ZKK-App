@@ -126,7 +126,6 @@
   <ItemGroup>
     <Content Include="Files\geier3d.png" />
     <Content Include="Files\news.txt" />
-    <Content Include="README_FIRST.txt" />
     <Content Include="Assets\AlignmentGrid.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

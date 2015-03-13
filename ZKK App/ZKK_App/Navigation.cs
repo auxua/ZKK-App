@@ -157,19 +157,19 @@ namespace ZKK_App
             {
                 Title = "Willkommen",
                 //IconSource = "example.png",
-                TargetType = typeof(WelcomePage)
+                TargetType = typeof(interfaces.WelcomePage)
             });
             
             this.Add(new MenuItem()
             {
                 Title = "Einstellungen/Update",
-                TargetType = typeof(ConfigPage)
+                TargetType = typeof(interfaces.ConfigPage)
             });
 
             this.Add(new MenuItem()
             {
                 Title = "News",
-                TargetType = typeof(NewsPage)
+                TargetType = typeof(interfaces.NewsPage)
             });
 
             this.Add(new MenuItem()
@@ -181,18 +181,36 @@ namespace ZKK_App
             this.Add(new MenuItem()
             {
                 Title = "Kasse",
-                TargetType = typeof(WelcomePage)
+                TargetType = typeof(interfaces.BillingPage)
             });
 
             this.Add(new MenuItem()
             {
                 Title = "AK-Liste",
+                TargetType = typeof(interfaces.AKPage)
+            });
+
+            this.Add(new MenuItem()
+            {
+                Title = "AK-Plan ZaPF",
                 TargetType = typeof(WelcomePage)
             });
 
             this.Add(new MenuItem()
             {
-                Title = "AK-Plan",
+                Title = "AK-Plan KIF",
+                TargetType = typeof(WelcomePage)
+            });
+            
+            this.Add(new MenuItem()
+            {
+                Title = "AK-Plan KoMa",
+                TargetType = typeof(WelcomePage)
+            });
+            
+            this.Add(new MenuItem()
+            {
+                Title = "gemeinsame Aks",
                 TargetType = typeof(WelcomePage)
             });
 
@@ -201,6 +219,27 @@ namespace ZKK_App
                 Title = "Raumfinder",
                 //TargetType = typeof(WelcomePage)
                 TargetType = typeof(interfaces.RoomFinderPage)
+            });
+
+            this.Add(new MenuItem()
+            {
+                Title = "Satzungen und Policies",
+                //TargetType = typeof(WelcomePage)
+                TargetType = typeof(interfaces.RoomFinderPage)
+            });
+
+            this.Add(new MenuItem()
+            {
+                Title = "Link-Sammlung",
+                //TargetType = typeof(WelcomePage)
+                TargetType = typeof(interfaces.RoomFinderPage)
+            });
+
+            this.Add(new MenuItem()
+            {
+                Title = "Über diese App",
+                //TargetType = typeof(WelcomePage)
+                TargetType = typeof(interfaces.AboutPage)
             });
         }
     }

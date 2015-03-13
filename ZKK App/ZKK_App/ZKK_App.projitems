@@ -9,8 +9,23 @@
     <Import_RootNamespace>ZKK_App</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)aks\AKDB.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)aks\AKItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)aks\AKItemPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Conferences.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)interfaces\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)interfaces\AKPage.xaml.cs">
+      <DependentUpon>AKPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)interfaces\BillingPage.xaml.cs">
+      <DependentUpon>BillingPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)interfaces\ConfigPage.xaml.cs">
       <DependentUpon>ConfigPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -67,6 +82,24 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)interfaces\RoomFinderPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)interfaces\BillingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)interfaces\AKPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)interfaces\AboutPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
