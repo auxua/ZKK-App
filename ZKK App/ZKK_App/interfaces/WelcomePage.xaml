@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZKK_App.interfaces.WelcomePage"
+             Title="Wilkommen">
+  <ContentPage.Padding>
+    30, 20, 20, 0
+  </ContentPage.Padding>
+  <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+    <ScrollView Orientation="Vertical" VerticalOptions="StartAndExpand">
+      <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" Spacing="50">
+        <Label FontAttributes="Bold"
+               FontSize="Large"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" >
+          <Label.Text>
+            Willkommen bei der ZKK-APP
+          </Label.Text>
+        </Label>
+
+
+        <Label FontAttributes="None"
+               FontSize="Medium"
+               HorizontalOptions="Center"
+               VerticalOptions="StartAndExpand" >
+          <Label.Text>
+            Dies ist die ZKK-App.
+            
+            Falls die Navigation nicht sichtbar ist und auch kein Menü-Knopf erscheint, kann das Menü mit einer Wisch-Geste von Links nach Rechts erreicht werden.
+
+            Im Bereich Einstellungen/Update kannst du die wichtigsten Einstellungen vornehmen und auch die Daten der App komplett aktualisieren.
+
+            Diese App übernimmt keinen Anspruch auf Vollständigkeit und Korrektheit. Im Zweifelsfall gilt, was die Orga sagt.
+
+            Viel Spaß mit der App bei der ZKK!
+          </Label.Text>
+        </Label>
+      </StackLayout>
+    </ScrollView>
+  </StackLayout>
+</ContentPage>
