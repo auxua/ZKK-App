@@ -193,25 +193,25 @@ namespace ZKK_App
             this.Add(new MenuItem()
             {
                 Title = "AK-Plan ZaPF",
-                TargetType = typeof(WelcomePage)
+                TargetType = typeof(interfaces.AKListPageZapf)
             });
 
             this.Add(new MenuItem()
             {
                 Title = "AK-Plan KIF",
-                TargetType = typeof(WelcomePage)
+                TargetType = typeof(interfaces.AKListPageKif)
             });
             
             this.Add(new MenuItem()
             {
                 Title = "AK-Plan KoMa",
-                TargetType = typeof(WelcomePage)
+                TargetType = typeof(interfaces.AKListPageKoma)
             });
             
             this.Add(new MenuItem()
             {
-                Title = "gemeinsame Aks",
-                TargetType = typeof(WelcomePage)
+                Title = "Plan gemeinsame AKs",
+                TargetType = typeof(interfaces.AKListPageZKK)
             });
 
             this.Add(new MenuItem()
@@ -225,14 +225,14 @@ namespace ZKK_App
             {
                 Title = "Satzungen und Policies",
                 //TargetType = typeof(WelcomePage)
-                TargetType = typeof(interfaces.RoomFinderPage)
+                TargetType = typeof(interfaces.PolicyPage)
             });
 
             this.Add(new MenuItem()
             {
                 Title = "Link-Sammlung",
                 //TargetType = typeof(WelcomePage)
-                TargetType = typeof(interfaces.RoomFinderPage)
+                TargetType = typeof(interfaces.LinksPage)
             });
 
             this.Add(new MenuItem()

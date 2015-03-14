@@ -9,6 +9,10 @@
     <Import_RootNamespace>ZKK_App</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)aklist\AKlistDayPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)aklist\AKlistItemCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)aklist\AKlistDB.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)aklist\AKlistItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)aks\AKDB.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)aks\AKItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)aks\AKItemPage.cs" />
@@ -16,6 +20,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Conferences.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)interfaces\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)interfaces\AKlistPage.xaml.cs">
+      <DependentUpon>AKlistPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)interfaces\AKPage.xaml.cs">
@@ -30,12 +38,20 @@
       <DependentUpon>ConfigPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)interfaces\LinksPage.xaml.cs">
+      <DependentUpon>LinksPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)interfaces\NewsPage.xaml.cs">
       <DependentUpon>NewsPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)interfaces\PlacesPage.xaml.cs">
       <DependentUpon>PlacesPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)interfaces\PolicyPage.xaml.cs">
+      <DependentUpon>PolicyPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)interfaces\RoomFinderPage.xaml.cs">
@@ -47,6 +63,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)IPersonalStorage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)links\LinksDB.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)links\LinksItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Navigation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)news\NewsDB.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)news\NewsItem.cs" />
@@ -54,6 +72,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)places\PlaceDB.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)places\PlaceItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)places\PlaceItemPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)policies\PolicyDB.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)policies\PolicyItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)policies\PolicyItemPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Settings.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +121,24 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)interfaces\AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)interfaces\PolicyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)interfaces\AKlistPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)interfaces\LinksPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

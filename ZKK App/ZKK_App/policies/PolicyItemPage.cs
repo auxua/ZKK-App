@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 
-namespace ZKK_App.places
+namespace ZKK_App.policies
 {
-    public class PlaceItemPage : ContentPage
+    public class PolicyItemPage : ContentPage
     {
-        public PlaceItemPage(PlaceItem p)
+        public PolicyItemPage(PolicyItem p)
         {
             Label titleLabel = new Label {
                 YAlign = TextAlignment.Center,
@@ -19,46 +19,26 @@ namespace ZKK_App.places
 
             };
             //titleLabel.SetBinding(Label.TextProperty,"Title");
-
-            Label detailLabel = new Label
-            {
-                YAlign = TextAlignment.Center,
-                XAlign = TextAlignment.Center,
-                FontAttributes = Xamarin.Forms.FontAttributes.Italic,
-                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
-                Text = p.Rooms
-            };
-            //detailLabel.SetBinding(Label.TextProperty, "Rooms");
-
+            
             Label commentLabel = new Label
             {
                 YAlign = TextAlignment.Center,
                 XAlign = TextAlignment.Start,
                 FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
-                Text = p.Comment
+                Text = p.Text
             };
             //commentLabel.SetBinding(Label.TextProperty, "Comment");
 
-            string path = DependencyService.Get<IPersonalStorage>().GetFullFilePath(p.Imagename);
-
-
-            // TODO: Optimize Size of the image...
-            Image image = new Image
-            {
-                MinimumHeightRequest = 200,
-                MinimumWidthRequest = 200,
-                Source = ImageSource.FromFile(path)
-            };
-            //image.SetBinding(Image.SourceProperty, "Imagename");
 
             var layout = new StackLayout
             {
                 Padding = new Thickness(20, 0, 20, 0),
                 Orientation = StackOrientation.Vertical,
                 HorizontalOptions = LayoutOptions.Center,
-                Children = { titleLabel, image, detailLabel, commentLabel },
+                Children = { titleLabel, commentLabel },
                 VerticalOptions = LayoutOptions.Center
             };
+
 
             Title = p.Title;
 

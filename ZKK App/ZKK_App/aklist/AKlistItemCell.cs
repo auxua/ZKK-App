@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 
-namespace ZKK_App.news
+namespace ZKK_App.aklist
 {
-    public class NewsItemCell : ViewCell
+    public class AKlistItemCell : ViewCell
     {
-        public NewsItemCell()
+        public AKlistItemCell()
         {
             Label dateLabel = new Label {
                 YAlign = TextAlignment.Start,
@@ -19,29 +19,29 @@ namespace ZKK_App.news
             TextColor = Color.FromHex("DCDCDC")
 #endif
             };
-            dateLabel.SetBinding(Label.TextProperty,"Date");
+            dateLabel.SetBinding(Label.TextProperty,"Time");
 
             Label titleLabel = new Label {
                 YAlign = TextAlignment.Center,
                 XAlign = TextAlignment.Center,
                 TextColor = Color.FromHex("00549F"),
                 FontAttributes = FontAttributes.Bold,
-                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label))
+                FontSize = Device.GetNamedSize(NamedSize.Large,typeof(Label))
 
             };
             titleLabel.SetBinding(Label.TextProperty,"Title");
 
             Label detailLabel = new Label
             {
-                YAlign = TextAlignment.Start,
-                XAlign = TextAlignment.Start,
+                YAlign = TextAlignment.Center,
+                XAlign = TextAlignment.Center,
                 FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label))
             };
-            detailLabel.SetBinding(Label.TextProperty, "Detail");
+            detailLabel.SetBinding(Label.TextProperty, "Room");
 
             var layout = new StackLayout
             {
-                Padding = new Thickness(20, 0, 0, 0),
+                Padding = new Thickness(20, 0, 20, 0),
                 Orientation = StackOrientation.Vertical,
                 HorizontalOptions = LayoutOptions.StartAndExpand,
                 Children = { dateLabel, titleLabel, detailLabel }
