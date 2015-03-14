@@ -37,9 +37,9 @@ namespace ZKK_App.Droid
                     using (var dest = File.Create(path))
                         asset.CopyTo(dest);
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    //Console.WriteLine("not possible: " + e.Message);
+                    // Do nothing..
                 }
             }
 

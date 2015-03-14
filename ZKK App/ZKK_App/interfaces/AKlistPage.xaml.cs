@@ -36,22 +36,34 @@ namespace ZKK_App.interfaces
 
     public class AKListPageZapf : AKlistPage
     {
-        public AKListPageZapf() : base(Conferences.ZAPF) { }
+        public AKListPageZapf() : base(Conferences.ZAPF) 
+        {
+            Title = "AK-Plan ZaPF";
+        }
     }
 
     public class AKListPageKif : AKlistPage
     {
-        public AKListPageKif() : base(Conferences.KIF) { }
+        public AKListPageKif() : base(Conferences.KIF) 
+        {
+            Title = "AK-Plan KIF";
+        }
     }
 
     public class AKListPageKoma : AKlistPage
     {
-        public AKListPageKoma() : base(Conferences.KOMA) { }
+        public AKListPageKoma() : base(Conferences.KOMA) 
+        {
+            Title = "AK-Plan KoMa";
+        }
     }
 
     public class AKListPageZKK : AKlistPage
     {
-        public AKListPageZKK() : base(Conferences.ALL) { }
+        public AKListPageZKK() : base(Conferences.ALL) 
+        {
+            Title = "Plan gemeinsamer AKs";
+        }
     }
 
     #endregion

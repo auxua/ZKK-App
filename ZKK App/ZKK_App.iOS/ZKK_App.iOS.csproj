@@ -60,9 +60,9 @@
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Distribution: Arno Schmetz</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>980bf767-ce1e-40c7-bffe-a1d2131a8005</CodesignProvision>
+    <CodesignProvision>a901bea1-7744-47d6-9c36-6902ab87a022</CodesignProvision>
     <CodesignResourceRules />
     <CodesignExtraArgs />
   </PropertyGroup>

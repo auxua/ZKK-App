@@ -20,13 +20,14 @@ namespace ZKK_App.interfaces
             ListView listView = new ListView();
 
 
+            //listView.ItemTemplate = new DataTemplate(typeof(interfaces.CenteredTextCell));
             listView.ItemTemplate = new DataTemplate(typeof(TextCell));
             listView.ItemTemplate.SetBinding(TextCell.TextProperty, "Title");
             listView.ItemTemplate.SetBinding(TextCell.DetailProperty, "Link");
-
+            listView.RowHeight = 120;
             listView.ItemsSource = DB.GetItems();
-            listView.VerticalOptions = LayoutOptions.CenterAndExpand;
-            listView.HorizontalOptions = LayoutOptions.CenterAndExpand;
+            //listView.VerticalOptions = LayoutOptions.CenterAndExpand;
+            //listView.HorizontalOptions = LayoutOptions.CenterAndExpand;
             //listView.BindingContext = items;
 
             listView.ItemSelected += (sender, e) => openURL(((LinksItem)e.SelectedItem).Link);

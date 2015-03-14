@@ -36,6 +36,11 @@ namespace ZKK_App.interfaces
         {
             //InitializeComponent();
 
+            //
+            // For now, deactivate Picker, because it is not used at the moment...
+            //
+
+
             //Create a Picker for the Conference
             Picker picker = new Picker
             {
@@ -138,10 +143,10 @@ namespace ZKK_App.interfaces
                 Orientation = StackOrientation.Vertical,
                 VerticalOptions = LayoutOptions.Center,
                 Children = {
-						new Label {
+						/*new Label {
 							XAlign = TextAlignment.Center,
 							Text = "Welche Konferenz besuchst du? (Die Anzeige wird entsprechend angepasst)"
-						},picker,
+						},picker,*/
                         new Label {
                             XAlign = TextAlignment.Center,
                             Text = "Soll der Bereich News die News-Website direkt einbinden (Internet-Verbindung immer notwendig!), oder Offline bereitstellen?"

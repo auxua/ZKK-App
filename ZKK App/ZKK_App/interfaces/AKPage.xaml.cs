@@ -31,6 +31,8 @@ namespace ZKK_App.interfaces
             Children.Add(new AKItemPage(db.GetItems(Conferences.KIF), "KIF-AKs"));
             Children.Add(new AKItemPage(db.GetItems(Conferences.KOMA), "KoMa-AKs"));
             Children.Add(new AKItemPage(db.GetItems(Conferences.ALL), "gemeinsame AKs"));
+
+            Title = "AK-Liste";
 		}
 	}
 }

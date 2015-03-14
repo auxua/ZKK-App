@@ -34,6 +34,7 @@
       <DependentUpon>BillingPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)interfaces\CenteredTextCell.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)interfaces\ConfigPage.xaml.cs">
       <DependentUpon>ConfigPage.xaml</DependentUpon>
       <SubType>Code</SubType>

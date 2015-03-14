@@ -65,6 +65,8 @@ namespace ZKK_App
                     // This color looks good on the Blue background
                     TextColor = Color.FromHex("DCDCDC"),
                     Text = "Menü",
+                    FontSize = Device.GetNamedSize(NamedSize.Large,typeof(Label)),
+                    FontAttributes = FontAttributes.Bold
                 }
             };
 
@@ -244,117 +246,5 @@ namespace ZKK_App
         }
     }
 
-    #region Some Test pages - nothing to be used in the later App
-
-    public class LeadsPage : ContentPage
-    {
-        public LeadsPage() 
-        {
-            //get News-File..
-
-#if __IOS__
-            var resourcePrefix = "ZKK_App.iOS.";
-#endif
-#if __ANDROID__
-            var resourcePrefix = "ZKK_App.Doid.";
-#endif
-#if WINDOWS_PHONE
-            var resourcePrefix = "ZKK_App.WinPhone.";
-#endif
-            //Debug.WriteLine("Using this resource prefix: " + resourcePrefix);
-            // note that the prefix includes the trailing period '.' that is required
-            //var assembly = typeof(LeadsPage).GetTypeInfo().Assembly;
-            var assembly = typeof(LeadsPage).Assembly;
-            //Stream stream = assembly.GetManifestResourceStream(resourcePrefix + "Resources.news.txt");
-            
-            String text = "noch nix";
-#if WINDOWS_PHONE
-            if (File.Exists("Files/news.txt"))
-            {
-                StreamWriter sw = new StreamWriter("news.txt");
-                sw.Write("Tada!!!");
-                text = "im if";
-                sw.Close();
-                StreamReader sr = new StreamReader("news.txt");
-                text = sr.ReadToEnd();
-                sr.Close();
-            }
-#endif
-            text = Application.Current.Resources.ToString();
-            
-#if __ANDROID__
-            /*StreamWriter sw = new StreamWriter(stream);
-            sw.Write("Tada!!!");
-            text = "im if";
-            sw.Close();
-            StreamReader sr = new StreamReader(stream);
-            text = sr.ReadToEnd();
-            sr.Close();*/
-            //InputStream input = Assets.Open ("my_asset.txt");
-#endif
-
-
-            Content = new StackLayout
-            {
-                VerticalOptions = LayoutOptions.Center,
-                Children = {
-						new Label {
-							XAlign = TextAlignment.Center,
-							Text = text
-						}
-					}
-            };
-        }
-    }
-
-
-    //public class OpportunitiesPage : CarouselPage
-    public class OpportunitiesPage : TabbedPage
-    {
-        public OpportunitiesPage() 
-        {
-            Children.Add(new Tab1Page());
-            Children.Add(new Tab2Page());
-            
-        }
-    }
-
-    public class Tab1Page : ContentPage
-    {
-        public Tab1Page()
-        {
-            Title = "Tab 1";
-            Content = new StackLayout
-            {
-                VerticalOptions = LayoutOptions.Center,
-                Children = {
-						new Label {
-							XAlign = TextAlignment.Center,
-							Text = "Das ist die erst Tab-Seite",
-						}
-					}
-            };
-        }
-    }
-
-    public class Tab2Page : ContentPage
-    {
-        public Tab2Page()
-        {
-            Title = "Tab 2";
-            Content = new StackLayout
-            {
-                VerticalOptions = LayoutOptions.Center,
-                Children = {
-						new Label {
-							XAlign = TextAlignment.Center,
-							Text = "Das ist die zweite Tab-Seite"
-						}
-					}
-            };
-        }
-    }
-
-#endregion
-
+    
 }

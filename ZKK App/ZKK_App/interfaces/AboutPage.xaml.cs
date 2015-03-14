@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 using Xamarin.Forms;
 
@@ -28,9 +29,13 @@ namespace ZKK_App.interfaces
                         FontSize = Device.GetNamedSize(NamedSize.Large,typeof(Label)),
                         XAlign = TextAlignment.Center
                     },
+                    new Label
+                    {
+                        Text = "Version: "+Assembly.GetExecutingAssembly().GetName().Version+"\n"
+                    },
                     new Label 
                     {
-                        Text = "Das ZKK-Logo wurde kreiert von Martin Bellgardt. \nDie App wurde entwickelt von Arno Schmetz. \nDer Quellcode ist OpenSource und zu finden unter https://github.com/auxua/ZKK_App",
+                        Text = "\n Das ZKK-Logo wurde kreiert von Martin Bellgardt. \n \nDie App wurde entwickelt von Arno Schmetz. \n \nDer Quellcode ist OpenSource und zu finden unter TBD",
                         FontAttributes = FontAttributes.None,
                         FontSize = Device.GetNamedSize(NamedSize.Medium,typeof(Label)),
                         XAlign = TextAlignment.Center

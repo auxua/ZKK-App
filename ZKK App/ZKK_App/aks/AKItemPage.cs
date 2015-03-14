@@ -12,13 +12,14 @@ namespace ZKK_App.aks
             ListView listView = new ListView();
 
 
-            listView.ItemTemplate = new DataTemplate(typeof(TextCell));
+            listView.ItemTemplate = new DataTemplate(typeof(interfaces.CenteredTextCell));
             listView.ItemTemplate.SetBinding(TextCell.TextProperty, "Title");
             listView.ItemTemplate.SetBinding(TextCell.DetailProperty, "Detail");
+            listView.RowHeight = 120;
 
             listView.ItemsSource = items;
-            listView.VerticalOptions = LayoutOptions.CenterAndExpand;
-            listView.HorizontalOptions = LayoutOptions.CenterAndExpand;
+            //listView.VerticalOptions = LayoutOptions.CenterAndExpand;
+            //listView.HorizontalOptions = LayoutOptions.CenterAndExpand;
             //listView.BindingContext = items;
             
             
