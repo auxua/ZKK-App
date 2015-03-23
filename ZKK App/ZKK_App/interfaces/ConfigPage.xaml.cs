@@ -147,10 +147,10 @@ namespace ZKK_App.interfaces
 							XAlign = TextAlignment.Center,
 							Text = "Welche Konferenz besuchst du? (Die Anzeige wird entsprechend angepasst)"
 						},picker,*/
-                        new Label {
+                        /*new Label {
                             XAlign = TextAlignment.Center,
                             Text = "Soll der Bereich News die News-Website direkt einbinden (Internet-Verbindung immer notwendig!), oder Offline bereitstellen?"
-                        },NewsSwitch,
+                        },NewsSwitch,*/
                         new Label {
                             Text = " " //Just a fake for making a bit spacing in here
                         },DatenLabel,UpdateButton,UpdateLabel
@@ -192,6 +192,8 @@ namespace ZKK_App.interfaces
             // Step 1: Load news and contents
             //this.DownloadFile(Settings.AppContentsFileSource, "contents.txt", true); downloads++;
             //string path = DependencyService.Get<IPersonalStorage>().GetFullFilePath("contents.txt");
+
+            downloadFails = false;
 
             downloads = Settings.ContentFiles.Length + 1;
             this.DownloadFile(Settings.NewsFileSource, "news.txt");

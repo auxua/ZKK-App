@@ -63,6 +63,10 @@
       <DependentUpon>WelcomePage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)interfaces\ZISOnlinePage.xaml.cs">
+      <DependentUpon>ZISOnlinePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)IPersonalStorage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)links\LinksDB.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)links\LinksItem.cs" />
@@ -140,6 +144,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)interfaces\LinksPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)interfaces\ZISOnlinePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

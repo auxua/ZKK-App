@@ -47,6 +47,8 @@ namespace ZKK_App.places
             {
                 MinimumHeightRequest = 200,
                 MinimumWidthRequest = 200,
+                VerticalOptions = LayoutOptions.Start,
+                HeightRequest = 500,
                 Source = ImageSource.FromFile(path)
             };
             //image.SetBinding(Image.SourceProperty, "Imagename");

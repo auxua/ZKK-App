@@ -15,6 +15,7 @@ namespace ZKK_App.interfaces
 		{
 			//InitializeComponent ();
 
+            
             PlacesDB DB = new PlacesDB();
             IEnumerable<PlaceItem> liste = DB.GetItems();
 

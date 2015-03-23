@@ -14,7 +14,15 @@ namespace ZKK_App.aklist
     /// </summary>
     class AKlistDB
     {
+        /// <summary>
+        /// The Items are stored inthis database
+        /// </summary>
         List<AKlistItem> database;
+
+        /// <summary>
+        /// Stores the names of the days that are existing
+        /// </summary>
+        private List<string> Days;
 
         /// <summary>
         /// A Database for the Policies of the conference
@@ -72,13 +80,12 @@ namespace ZKK_App.aklist
                         Days.Add(a.Day);
                 }
             }
-            //Close File, finished!
+            // Close File, finished!
             sr.Close();
-
-
+            // Apply a sorting to the days. For this case, we can simply use string-sorting
+            Days.Sort();
         }
 
-        private List<string> Days;
 
         public IEnumerable<string> GetDays()
         {

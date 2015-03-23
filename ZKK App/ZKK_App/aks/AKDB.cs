@@ -30,7 +30,7 @@ namespace ZKK_App.aks
             string pathzapf = DependencyService.Get<IPersonalStorage>().GetFullFilePath("ak-zapf");
             string pathkif = DependencyService.Get<IPersonalStorage>().GetFullFilePath("ak-kif");
             string pathkoma = DependencyService.Get<IPersonalStorage>().GetFullFilePath("ak-koma");
-            string pathzkk = DependencyService.Get<IPersonalStorage>().GetFullFilePath("ak-common");
+            string pathzkk = DependencyService.Get<IPersonalStorage>().GetFullFilePath("ak-zkk");
 
             // use Threading for the import
             List<Thread> threads = new List<Thread>();

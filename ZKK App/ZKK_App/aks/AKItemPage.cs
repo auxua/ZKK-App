@@ -15,7 +15,8 @@ namespace ZKK_App.aks
             listView.ItemTemplate = new DataTemplate(typeof(interfaces.CenteredTextCell));
             listView.ItemTemplate.SetBinding(TextCell.TextProperty, "Title");
             listView.ItemTemplate.SetBinding(TextCell.DetailProperty, "Detail");
-            listView.RowHeight = 120;
+            //listView.RowHeight = 120;
+            listView.HasUnevenRows = true;
 
             listView.ItemsSource = items;
             //listView.VerticalOptions = LayoutOptions.CenterAndExpand;

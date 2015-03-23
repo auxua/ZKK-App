@@ -164,7 +164,8 @@ namespace ZKK_App
             
             this.Add(new MenuItem()
             {
-                Title = "Einstellungen/Update",
+                //Title = "Einstellungen/Update",
+                Title = "Update",
                 TargetType = typeof(interfaces.ConfigPage)
             });
 
@@ -176,15 +177,23 @@ namespace ZKK_App
 
             this.Add(new MenuItem()
             {
-                Title = "Orte",
-                TargetType = typeof(interfaces.PlacesPage)
+                Title = "ZIS (Online)",
+                TargetType = typeof(interfaces.ZISOnlinePage)
             });
 
             this.Add(new MenuItem()
             {
+                Title = "Orte",
+                TargetType = typeof(interfaces.PlacesPage)
+            });
+
+            // Billing is deactivated due to no API at the moment...
+
+            /*this.Add(new MenuItem()
+            {
                 Title = "Kasse",
                 TargetType = typeof(interfaces.BillingPage)
-            });
+            });*/
 
             this.Add(new MenuItem()
             {
@@ -225,7 +234,8 @@ namespace ZKK_App
 
             this.Add(new MenuItem()
             {
-                Title = "Satzungen und Policies",
+                Title = "Policies und Standards",
+                //Title = "Satzungen und Policies",
                 //TargetType = typeof(WelcomePage)
                 TargetType = typeof(interfaces.PolicyPage)
             });

@@ -19,7 +19,9 @@ namespace ZKK_App.aklist
             ListView listview = new ListView();
 
             // TODO: Fix this for long texts (texts can overflow into next view!)
-            listview.RowHeight = 120;
+            //listview.RowHeight = 120;
+            // Xamarin Forms 1.4 Update!
+            listview.HasUnevenRows = true;
             // set the cell data template
             listview.ItemTemplate = new DataTemplate(typeof(AKlistItemCell));
 

@@ -15,7 +15,11 @@ namespace ZKK_App.interfaces
 		{
 			InitializeComponent ();
             //Use the Online-Version?
-            bool Online = Application.Current.Properties[Settings.PropertyNewsSource].Equals("Online");
+            //bool Online = Application.Current.Properties[Settings.PropertyNewsSource].Equals("Online");
+            
+            // New: Disable selection, due to another menu item for the ZIS
+            bool Online = false;
+
 
             if (Online)
             {
@@ -47,7 +51,9 @@ namespace ZKK_App.interfaces
                 ListView listview = new ListView();
                 
                 // TODO: Fix this for long texts (texts can overflow into next view!)
-                listview.RowHeight = 140;
+                //listview.RowHeight = 140;
+                // Xamarin Forms 1.4 Update!
+                listview.HasUnevenRows = true;
                 // set the cell data template
                 listview.ItemTemplate = new DataTemplate(typeof(NewsItemCell));
                 
