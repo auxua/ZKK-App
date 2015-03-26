@@ -9,12 +9,14 @@
     <Import_RootNamespace>ZKK_App</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)akinterest\LikeManagement.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)aklist\AKlistDayPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)aklist\AKlistItemCell.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)aklist\AKlistDB.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)aklist\AKlistItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)aks\AKDB.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)aks\AKItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)aks\AKItemCell.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)aks\AKItemPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Conferences.cs" />

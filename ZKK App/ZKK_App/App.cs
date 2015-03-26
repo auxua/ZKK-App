@@ -12,22 +12,27 @@ namespace ZKK_App
 	{
 		public App ()
 		{
-            //On First start, copy the data from Assets to Personal storage
+            // On First start, copy the data from Assets to Personal storage
             
-            //Check Configuration and load default values on first start
+            // Check Configuration and load default values on first start
             if (!Application.Current.Properties.ContainsKey(Settings.PropertyConferenceSelection))
             {
-                //Not defined conference!
+                // Not defined conference!
                 Application.Current.Properties[Settings.PropertyConferenceSelection] = Conferences.ALL.ToString();
-                //Not defined the News-Source (Default: Online)
+                // Not defined the News-Source (Default: Online)
                 Application.Current.Properties[Settings.PropertyNewsSource] = "Online";
             }
             if (!Application.Current.Properties.ContainsKey(Settings.PropertyUpdateDate))
             {
-                //First satrt, copy assets if needed
+                // First satrt, copy assets if needed
                 DependencyService.Get<IPersonalStorage>().CopyAssets();
-                //Set property - "Datenstand" is the version/date of the data
+                // Set property - "Datenstand" is the version/date of the data
                 Application.Current.Properties[Settings.PropertyUpdateDate] = "Initialzustand";
+            }
+            if (!Application.Current.Properties.ContainsKey(Settings.PropertyLikesList))
+            {
+                // Init the List of workshops, the user wants to visit
+                Application.Current.Properties[Settings.PropertyLikesList] = new List<String>();
             }
             MainPage = new RootPage();
 		}

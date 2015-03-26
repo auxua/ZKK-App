@@ -17,7 +17,7 @@ namespace ZKK_App
         {
             var menuPage = new MenuPage();
             // The effective navigation gets assigned
-            menuPage.Menu.ItemSelected += (sender, e) => NavigateTo(e.SelectedItem as MenuItem);
+            menuPage.Menu.ItemSelected += (sender, e) => NavigateTo(e.SelectedItem as NavMenuItem);
 
             Master = menuPage;
             // Set default Detail page
@@ -28,7 +28,7 @@ namespace ZKK_App
         /// Depending on the selected item, go to the corresponding page
         /// </summary>
         /// <param name="menu">the menuitem, that was selected</param>
-        void NavigateTo(MenuItem menu)
+        void NavigateTo(NavMenuItem menu)
         {
             Page displayPage = (Page)Activator.CreateInstance(menu.TargetType);
 
@@ -87,7 +87,7 @@ namespace ZKK_App
     /// The MenuItem represents the menuitems and stores the corresponding target page.
     /// It can be extended by an Icon, e.g.
     /// </summary>
-    public class MenuItem
+    public class NavMenuItem
     {
         /// <summary>
         /// The Title that is shown
@@ -129,7 +129,7 @@ namespace ZKK_App
     {
         public MenuListView()
         {
-            List<MenuItem> data = new MenuListData();
+            List<NavMenuItem> data = new MenuListData();
 
             ItemsSource = data;
             VerticalOptions = LayoutOptions.FillAndExpand;
@@ -151,37 +151,37 @@ namespace ZKK_App
     /// Here, we provide the technical navigation.
     /// The Title and corresponding pages are added to the menu.
     /// </summary>
-    public class MenuListData : List<MenuItem>
+    public class MenuListData : List<NavMenuItem>
     {
         public MenuListData()
         {
-            this.Add(new MenuItem()
+            this.Add(new NavMenuItem()
             {
                 Title = "Willkommen",
                 //IconSource = "example.png",
                 TargetType = typeof(interfaces.WelcomePage)
             });
             
-            this.Add(new MenuItem()
+            this.Add(new NavMenuItem()
             {
                 //Title = "Einstellungen/Update",
                 Title = "Update",
                 TargetType = typeof(interfaces.ConfigPage)
             });
 
-            this.Add(new MenuItem()
+            this.Add(new NavMenuItem()
             {
                 Title = "News",
                 TargetType = typeof(interfaces.NewsPage)
             });
 
-            this.Add(new MenuItem()
+            this.Add(new NavMenuItem()
             {
                 Title = "ZIS (Online)",
                 TargetType = typeof(interfaces.ZISOnlinePage)
             });
 
-            this.Add(new MenuItem()
+            this.Add(new NavMenuItem()
             {
                 Title = "Orte",
                 TargetType = typeof(interfaces.PlacesPage)
@@ -195,44 +195,44 @@ namespace ZKK_App
                 TargetType = typeof(interfaces.BillingPage)
             });*/
 
-            this.Add(new MenuItem()
+            this.Add(new NavMenuItem()
             {
                 Title = "AK-Liste",
                 TargetType = typeof(interfaces.AKPage)
             });
 
-            this.Add(new MenuItem()
+            this.Add(new NavMenuItem()
             {
                 Title = "AK-Plan ZaPF",
                 TargetType = typeof(interfaces.AKListPageZapf)
             });
 
-            this.Add(new MenuItem()
+            this.Add(new NavMenuItem()
             {
                 Title = "AK-Plan KIF",
                 TargetType = typeof(interfaces.AKListPageKif)
             });
             
-            this.Add(new MenuItem()
+            this.Add(new NavMenuItem()
             {
                 Title = "AK-Plan KoMa",
                 TargetType = typeof(interfaces.AKListPageKoma)
             });
             
-            this.Add(new MenuItem()
+            this.Add(new NavMenuItem()
             {
                 Title = "Plan gemeinsame AKs",
                 TargetType = typeof(interfaces.AKListPageZKK)
             });
 
-            this.Add(new MenuItem()
+            this.Add(new NavMenuItem()
             {
                 Title = "Raumfinder",
                 //TargetType = typeof(WelcomePage)
                 TargetType = typeof(interfaces.RoomFinderPage)
             });
 
-            this.Add(new MenuItem()
+            this.Add(new NavMenuItem()
             {
                 Title = "Policies und Standards",
                 //Title = "Satzungen und Policies",
@@ -240,14 +240,14 @@ namespace ZKK_App
                 TargetType = typeof(interfaces.PolicyPage)
             });
 
-            this.Add(new MenuItem()
+            this.Add(new NavMenuItem()
             {
                 Title = "Link-Sammlung",
                 //TargetType = typeof(WelcomePage)
                 TargetType = typeof(interfaces.LinksPage)
             });
 
-            this.Add(new MenuItem()
+            this.Add(new NavMenuItem()
             {
                 Title = "Über diese App",
                 //TargetType = typeof(WelcomePage)
