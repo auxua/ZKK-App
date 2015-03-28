@@ -24,13 +24,13 @@
                HorizontalOptions="Center"
                VerticalOptions="StartAndExpand" >
           <Label.Text>
-            Dies ist die ZKK-App.
+Dies ist die ZKK-App.
             
-            Falls die Navigation nicht sichtbar ist und auch kein Menü-Knopf erscheint, kann das Menü mit einer Wisch-Geste von Links nach Rechts erreicht werden.
+Falls die Navigation nicht sichtbar ist und auch kein Menü-Knopf erscheint, kann das Menü mit einer Wisch-Geste von Links nach Rechts erreicht werden.
 
-            Im Bereich Einstellungen/Update kannst du die wichtigsten Einstellungen vornehmen und auch die Daten der App komplett aktualisieren.
+Im Bereich Einstellungen/Update kannst du die wichtigsten Einstellungen vornehmen und auch die Daten der App komplett aktualisieren.
 
-            Diese App übernimmt keinen Anspruch auf Vollständigkeit und Korrektheit. Im Zweifelsfall gilt, was die Orga sagt.
+Diese App übernimmt keinen Anspruch auf Vollständigkeit und Korrektheit. Im Zweifelsfall gilt, was die Orga sagt.
 
             Viel Spaß mit der App bei der ZKK!
           </Label.Text>
