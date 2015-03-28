@@ -16,6 +16,7 @@ namespace ZKK_App.aks
             if (Device.OS == TargetPlatform.iOS)
             {
                 header = "Einträge zur Seite wischen für weitere Optionen";
+                Icon = "list.png";
             }
             else
             {

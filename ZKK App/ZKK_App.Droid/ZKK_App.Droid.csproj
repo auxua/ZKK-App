@@ -91,7 +91,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\news.txt" />
-    <AndroidAsset Include="Assets\like.png" />
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidAsset Include="Assets\geier3d.png" />
     <AndroidResource Include="Resources\Drawable\menu.png" />

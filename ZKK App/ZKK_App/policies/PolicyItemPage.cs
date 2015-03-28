@@ -42,6 +42,11 @@ namespace ZKK_App.policies
 
             Title = p.Title;
 
+            if (Device.OS == TargetPlatform.iOS)
+            {
+                Icon = "thumbsup.png";
+            }
+
             // Create a Scrollview to allow Scrolling on the Page
             ScrollView sc = new ScrollView();
             sc.Orientation = ScrollOrientation.Vertical;

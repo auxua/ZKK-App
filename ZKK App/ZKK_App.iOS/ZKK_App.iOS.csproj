@@ -148,7 +148,28 @@
     <ITunesArtwork Include="iTunesArtwork%402x" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Files\like.png" />
+    <BundleResource Include="Resources\house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\house%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\thumbsup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\thumbsup%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\list%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cal%402x.png" />
   </ItemGroup>
   <Import Project="..\ZKK_App\ZKK_App.projitems" Label="Shared" Condition="Exists('..\ZKK_App\ZKK_App.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

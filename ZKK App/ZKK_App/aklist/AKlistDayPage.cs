@@ -27,7 +27,10 @@ namespace ZKK_App.aklist
 
             // HACK: workaround issue #894 for now
             if (Device.OS == TargetPlatform.iOS)
+            {
                 listview.ItemsSource = new string[1] { "" };
+                Icon = "cal.png";
+            }
 
 
             // Perform Data Binding

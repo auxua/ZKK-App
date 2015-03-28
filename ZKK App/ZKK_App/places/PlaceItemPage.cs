@@ -64,6 +64,11 @@ namespace ZKK_App.places
 
             Title = p.Title;
 
+            if (Device.OS == TargetPlatform.iOS)
+            {
+                Icon = "house.png";
+            }
+
             // Create a Scrollview to allow Scrolling on the Page
             ScrollView sc = new ScrollView();
             sc.Orientation = ScrollOrientation.Vertical;
