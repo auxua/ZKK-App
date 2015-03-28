@@ -4,6 +4,7 @@ using System.Text;
 using System.IO;
 using Xamarin.Forms;
 using ZKK_App.interfaces;
+using System.ComponentModel;
 
 namespace ZKK_App
 {
@@ -17,7 +18,20 @@ namespace ZKK_App
         {
             var menuPage = new MenuPage();
             // The effective navigation gets assigned
-            menuPage.Menu.ItemSelected += (sender, e) => NavigateTo(e.SelectedItem as NavMenuItem);
+            menuPage.Menu.ItemSelected += (sender, e) =>
+                {
+                    // Before Navigating, recolor the cell
+                    if (menuPage.Menu.selected != null)
+                    {
+                        menuPage.Menu.selected.SetColors(true);
+                    }
+
+                    // Select new
+                    menuPage.Menu.selected = (menuPage.Menu.SelectedItem as NavMenuItem);
+                    menuPage.Menu.selected.SetColors(false);
+
+                    NavigateTo(e.SelectedItem as NavMenuItem);
+                };
 
             Master = menuPage;
             // Set default Detail page
@@ -30,6 +44,8 @@ namespace ZKK_App
         /// <param name="menu">the menuitem, that was selected</param>
         void NavigateTo(NavMenuItem menu)
         {
+           
+            
             Page displayPage = (Page)Activator.CreateInstance(menu.TargetType);
 
             Detail = new NavigationPage(displayPage);
@@ -45,8 +61,8 @@ namespace ZKK_App
     /// </summary>
     public class MenuPage : ContentPage
     {
-        public ListView Menu { get; set; }
-
+        public MenuListView Menu { get; set; }
+        
         public MenuPage()
         {
             Icon = "menu.png";
@@ -87,7 +103,7 @@ namespace ZKK_App
     /// The MenuItem represents the menuitems and stores the corresponding target page.
     /// It can be extended by an Icon, e.g.
     /// </summary>
-    public class NavMenuItem
+    public class NavMenuItem : INotifyPropertyChanged
     {
         /// <summary>
         /// The Title that is shown
@@ -100,24 +116,76 @@ namespace ZKK_App
         /// The page that should be opened when selecting this item
         /// </summary>
         public Type TargetType { get; set; }
+
+        // below: Event(handling) for (de)selecting the cell.
+        // This is used for creating consistency in color schemes between different platforms
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private Color _backgroundColor;
+
+        public Color BackgroundColor
+        {
+            get { return _backgroundColor; }
+            set
+            {
+                _backgroundColor = value;
+
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs("BackgroundColor"));
+                }
+            }
+        }
+
+        public void SetColors(bool isSelected)
+        {
+            if ( isSelected )
+            {
+                // Use RWTH-Blue
+                BackgroundColor = Color.FromHex("00549F");
+            }
+            else
+            {
+                // Use RWTH light-blue
+                BackgroundColor = Color.FromHex("8EBAE5");
+            }
+        }
     }
 
     /// <summary>
     /// The view (cell) used in the menu for the menu item.
-    /// Inherits from ImageCell for eventually add an image easily later on.
+    /// Inherits from ViewCell the get access to the Layout
+    /// (inherited from Imagecell in the past for possibility of images in some time)
     /// </summary>
-    public class MenuImageCell : ImageCell
-    {        
-        //TODO: Find images for the Menu items, then they can be added
-        public MenuImageCell()
+    public class MenuImageCell : ViewCell
+    {
+     
+        public MenuImageCell() : base()
         {
-            //make color device-dependent - the default colors may be not suitable!
-#if __IOS__
-            this.TextColor = Color.FromHex("262626");
-#else            
-            this.TextColor = Color.FromHex("DCDCDC");
-#endif
-            
+            Label Text = new Label
+            {
+                TextColor = Color.FromHex("DCDCDC"),
+                XAlign = TextAlignment.Start,
+                YAlign = TextAlignment.Center
+            };
+            Text.SetBinding(Label.TextProperty, "Title");
+
+            Label pad = new Label
+            {
+                Text = "   "
+            };
+
+            var layout = new StackLayout
+            {
+                Orientation = StackOrientation.Horizontal,
+                HorizontalOptions = LayoutOptions.Start,
+                VerticalOptions = LayoutOptions.CenterAndExpand,
+                Children = { pad, Text }
+            };
+            layout.SetBinding(Layout.BackgroundColorProperty, new Binding("BackgroundColor"));
+
+            View = layout;
         }
     }
 
@@ -127,6 +195,8 @@ namespace ZKK_App
     /// </summary>
     public class MenuListView : ListView
     {
+        public NavMenuItem selected { get; set; }
+        
         public MenuListView()
         {
             List<NavMenuItem> data = new MenuListData();
@@ -142,8 +212,10 @@ namespace ZKK_App
             // cell.SetBinding(ImageCell.ImageSourceProperty, "IconSource");
 
             ItemTemplate = cell;
-            // The first item is selected
-            SelectedItem = data[0];
+            // The first item is selected - the lines 2 and 3 are only for the color-fix...
+            //SelectedItem = data[0];
+            data[0].SetColors(false);
+            selected = data[0];
         }
     }
 

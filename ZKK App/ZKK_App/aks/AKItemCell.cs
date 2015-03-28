@@ -166,13 +166,21 @@ namespace ZKK_App.aks
             // the parents binding context.
             //View.BindingContext = BindingContext;
             base.OnBindingContextChanged();
-            if (((List<String>)Application.Current.Properties[Settings.PropertyLikesList]).Contains(titleLabel.Text))
+            List<String> list = Application.Current.Properties[Settings.PropertyLikesList] as List<String>;
+            try
             {
-                likeLabel.Text = "Interesse bekundet\n";
-            }
-            else
+                if (list.Contains(titleLabel.Text))
+                {
+                    likeLabel.Text = "Interesse bekundet\n";
+                }
+                else
+                {
+                    likeLabel.Text = " \n";
+                }
+            } 
+            catch (Exception e)
             {
-                likeLabel.Text = " \n";
+                likeLabel.Text = " Konnte Daten nciht laden: "+e.Message+list.ToString();
             }
         }
     }

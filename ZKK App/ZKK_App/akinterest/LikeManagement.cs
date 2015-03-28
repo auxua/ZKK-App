@@ -12,6 +12,7 @@ namespace ZKK_App.akinterest
 
         public static void SaveAKLikes()
         {
+            
             List<String> list = Application.Current.Properties[Settings.PropertyLikesList] as List<String>;
             string path = DependencyService.Get<IPersonalStorage>().GetFullFilePath("aklikes");
 
@@ -27,6 +28,10 @@ namespace ZKK_App.akinterest
 
         public static void LoadAKLikes()
         {
+            // If there is no List stored so far, then at least, create this list!
+            Application.Current.Properties[Settings.PropertyLikesList] = new List<String>();
+            
+            
             List<String> list = Application.Current.Properties[Settings.PropertyLikesList] as List<String>;
             string path = DependencyService.Get<IPersonalStorage>().GetFullFilePath("aklikes");
 
