@@ -44,13 +44,19 @@ namespace ZKK_App
         /// <param name="menu">the menuitem, that was selected</param>
         void NavigateTo(NavMenuItem menu)
         {
-           
+
+            try
+            {
+                Page displayPage = (Page)Activator.CreateInstance(menu.TargetType);
+                Detail = new NavigationPage(displayPage);
+
+                IsPresented = false;
+            }
+            catch
+            {
+                Device.BeginInvokeOnMainThread(() => { DisplayAlert("Fehler", "Die Seite konnte nciht geöffnet werden. Bitte ein Update durchführen. Sollte das Problem bestehen bleiben, bitte melden!", "Jawoll!"); });
+            }
             
-            Page displayPage = (Page)Activator.CreateInstance(menu.TargetType);
-
-            Detail = new NavigationPage(displayPage);
-
-            IsPresented = false;
         }
     }
 
@@ -295,6 +301,12 @@ namespace ZKK_App
             {
                 Title = "Plan gemeinsame AKs",
                 TargetType = typeof(interfaces.AKListPageZKK)
+            });
+
+            this.Add(new NavMenuItem()
+            {
+                Title = "Mein Stundenplan",
+                TargetType = typeof(interfaces.AKLikesPage)
             });
 
             this.Add(new NavMenuItem()

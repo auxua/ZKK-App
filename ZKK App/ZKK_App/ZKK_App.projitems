@@ -9,6 +9,7 @@
     <Import_RootNamespace>ZKK_App</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)akinterest\AKlistDBFull.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)akinterest\LikeManagement.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)aklist\AKlistDayPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)aklist\AKlistItemCell.cs" />
@@ -22,6 +23,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Conferences.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)interfaces\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)interfaces\AKLikesPage.xaml.cs">
+      <DependentUpon>AKLikesPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)interfaces\AKlistPage.xaml.cs">
@@ -152,6 +157,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)interfaces\ZISOnlinePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)interfaces\AKLikesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
