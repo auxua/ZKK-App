@@ -116,7 +116,10 @@ namespace ZKK_App
         /// </summary>
         public string Title { get; set; }
 
-        //public string IconSource { get; set; }
+        /// <summary>
+        /// The Icon besides the Menu item title
+        /// </summary>
+        public string Icon { get; set; }
 
         /// <summary>
         /// The page that should be opened when selecting this item
@@ -179,17 +182,27 @@ namespace ZKK_App
 
             Label pad = new Label
             {
-                Text = "   "
+                Text = " "
             };
+
+            Image image = new Image
+            {
+                Source = "info.png",
+                HeightRequest = 30,
+            };
+            image.SetBinding(Image.SourceProperty, "Icon");
 
             var layout = new StackLayout
             {
                 Orientation = StackOrientation.Horizontal,
                 HorizontalOptions = LayoutOptions.Start,
-                VerticalOptions = LayoutOptions.CenterAndExpand,
-                Children = { pad, Text }
+                VerticalOptions = LayoutOptions.Center,
+                Children = { pad, image, pad, Text }
             };
             layout.SetBinding(Layout.BackgroundColorProperty, new Binding("BackgroundColor"));
+
+            if (Device.OS == TargetPlatform.WinPhone)
+                layout.HeightRequest = 50;
 
             View = layout;
         }
@@ -236,7 +249,7 @@ namespace ZKK_App
             this.Add(new NavMenuItem()
             {
                 Title = "Willkommen",
-                //IconSource = "example.png",
+                Icon = "info.png",
                 TargetType = typeof(interfaces.WelcomePage)
             });
             
@@ -244,24 +257,28 @@ namespace ZKK_App
             {
                 //Title = "Einstellungen/Update",
                 Title = "Update",
+                Icon = "refresh.png",
                 TargetType = typeof(interfaces.ConfigPage)
             });
 
             this.Add(new NavMenuItem()
             {
                 Title = "News",
+                Icon = "news.png",
                 TargetType = typeof(interfaces.NewsPage)
             });
 
             this.Add(new NavMenuItem()
             {
                 Title = "ZIS (Online)",
+                Icon = "rss.png",
                 TargetType = typeof(interfaces.ZISOnlinePage)
             });
 
             this.Add(new NavMenuItem()
             {
                 Title = "Orte",
+                Icon = "house.png",
                 TargetType = typeof(interfaces.PlacesPage)
             });
 
@@ -276,49 +293,57 @@ namespace ZKK_App
             this.Add(new NavMenuItem()
             {
                 Title = "AK-Liste",
+                Icon = "list.png",
                 TargetType = typeof(interfaces.AKPage)
             });
 
             this.Add(new NavMenuItem()
             {
                 Title = "AK-Plan ZaPF",
+                Icon = "cal.png",
                 TargetType = typeof(interfaces.AKListPageZapf)
             });
 
             this.Add(new NavMenuItem()
             {
                 Title = "AK-Plan KIF",
+                Icon = "cal.png",
                 TargetType = typeof(interfaces.AKListPageKif)
             });
             
             this.Add(new NavMenuItem()
             {
                 Title = "AK-Plan KoMa",
+                Icon = "cal.png",
                 TargetType = typeof(interfaces.AKListPageKoma)
             });
             
             this.Add(new NavMenuItem()
             {
                 Title = "Plan gemeinsame AKs",
+                Icon = "cal.png",
                 TargetType = typeof(interfaces.AKListPageZKK)
             });
 
             this.Add(new NavMenuItem()
             {
                 Title = "Mein Stundenplan",
+                Icon = "cal.png",
                 TargetType = typeof(interfaces.AKLikesPage)
             });
 
             this.Add(new NavMenuItem()
             {
                 Title = "Raumfinder",
+                Icon = "pin.png",
                 //TargetType = typeof(WelcomePage)
                 TargetType = typeof(interfaces.RoomFinderPage)
             });
 
             this.Add(new NavMenuItem()
             {
-                Title = "Policies und Standards",
+                Title = "Gemeinschaftsstandards",
+                Icon = "thumbsup.png",
                 //Title = "Satzungen und Policies",
                 //TargetType = typeof(WelcomePage)
                 TargetType = typeof(interfaces.PolicyPage)
@@ -327,6 +352,7 @@ namespace ZKK_App
             this.Add(new NavMenuItem()
             {
                 Title = "Link-Sammlung",
+                Icon = "rss.png",
                 //TargetType = typeof(WelcomePage)
                 TargetType = typeof(interfaces.LinksPage)
             });
@@ -334,6 +360,7 @@ namespace ZKK_App
             this.Add(new NavMenuItem()
             {
                 Title = "Über diese App",
+                Icon = "info.png",
                 //TargetType = typeof(WelcomePage)
                 TargetType = typeof(interfaces.AboutPage)
             });

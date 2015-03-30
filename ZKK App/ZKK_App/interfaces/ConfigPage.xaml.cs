@@ -162,7 +162,7 @@ namespace ZKK_App.interfaces
             Content = v;
 
 
-            Title = "Einstellungen";
+            Title = "Update";
         }
 
         /// <summary>

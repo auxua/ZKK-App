@@ -17,12 +17,18 @@ namespace ZKK_App.interfaces
 			//InitializeComponent ();
 
             AKlistDBFull db = new AKlistDBFull();
-
+            Title = "Stundenplan";
             // Create pages and provide data
+            var liste = db.GetDays();
             foreach (string day in db.GetDays())
             {
                 AKlistDayPage daypPage = new AKlistDayPage(db.GetItems(day), day);
                 Children.Add(daypPage);
+            }
+
+            if (liste.Count() < 1)
+            {
+                Device.BeginInvokeOnMainThread(() => { DisplayAlert("Keine AKs", "Keine AKs als interessant markiert. Einfach in der AK-Liste die entsprechenden AKs markieren. (iOS: zur Seite Wischen, WP/Android: Gedrückt halten)", "Danke!"); });
             }
 		}
 	}

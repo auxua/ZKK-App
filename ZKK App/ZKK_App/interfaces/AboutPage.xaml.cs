@@ -35,7 +35,7 @@ namespace ZKK_App.interfaces
                     },
                     new Label 
                     {
-                        Text = "\n Das ZKK-Logo wurde kreiert von Martin Bellgardt. (lizensiert unter CC-BY-SA) \n \nDie App wurde entwickelt von Arno Schmetz. \n \nDer Quellcode ist OpenSource und zu finden unter https://github.com/auxua/ZKK-App",
+                        Text = "\n Das ZKK-Logo wurde kreiert von Martin Bellgardt. (lizenziert unter CC-BY-SA) \n \nDie App wurde entwickelt von Arno Schmetz. \n \nDer Quellcode ist OpenSource und zu finden unter https://github.com/auxua/ZKK-App",
                         FontAttributes = FontAttributes.None,
                         FontSize = Device.GetNamedSize(NamedSize.Medium,typeof(Label)),
                         XAlign = TextAlignment.Center

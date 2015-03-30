@@ -14,9 +14,11 @@ namespace ZKK_App.interfaces
 		{
 			//InitializeComponent ();
 
+            // Simple Page: just a webview for the ZISOnline...
+
             WebView webview = new WebView();
             webview.Source = Settings.NewsWebPage;
-
+            Title = "ZIS Online";
             Content = webview;
 		}
 	}

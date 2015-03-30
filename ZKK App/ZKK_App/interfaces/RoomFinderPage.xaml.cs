@@ -99,14 +99,21 @@ namespace ZKK_App.interfaces
         /// </summary>
         void onButtonClicked(object sender, EventArgs e)
         {
-            string a = "";
-            
-            if (rooms.ContainsKey(entry.Text.ToLower()))
-                a = rooms[entry.Text.ToLower()];
-            else
-                a = "Raum nicht gefunden. Bitte auf korrekte Schreibweise achten...";
+            try
+            {
+                string a = "";
 
-            Device.BeginInvokeOnMainThread(() => { answer.Text = a; });
+                if (rooms.ContainsKey(entry.Text.ToLower()))
+                    a = rooms[entry.Text.ToLower()];
+                else
+                    a = "Raum nicht gefunden. Bitte auf korrekte Schreibweise achten...";
+
+                Device.BeginInvokeOnMainThread(() => { answer.Text = a; });
+            }
+            catch
+            {
+                Device.BeginInvokeOnMainThread(() => { answer.Text = "Bitte einen Raumnamen eingeben!"; });
+            }
         }
 	}
 }

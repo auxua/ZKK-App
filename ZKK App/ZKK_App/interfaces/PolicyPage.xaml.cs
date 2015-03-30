@@ -25,7 +25,7 @@ namespace ZKK_App.interfaces
             }
 
 
-            Title = "Policies/Ordnungen";
+            Title = "Gemeinschaftsstandards";
 		}
 	}
 }

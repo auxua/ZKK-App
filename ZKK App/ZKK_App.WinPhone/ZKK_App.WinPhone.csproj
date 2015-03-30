@@ -124,13 +124,22 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cal.png" />
     <Content Include="Files\geier3d.png" />
     <Content Include="Files\news.txt" />
     <Content Include="Assets\AlignmentGrid.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="house.png" />
+    <Content Include="info.png" />
+    <Content Include="list.png" />
     <Content Include="menu.png" />
+    <Content Include="news.png" />
+    <Content Include="pin.png" />
+    <Content Include="refresh.png" />
+    <Content Include="rss.png" />
+    <Content Include="thumbsup.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
