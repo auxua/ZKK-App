@@ -52,9 +52,9 @@ namespace ZKK_App
 
                 IsPresented = false;
             }
-            catch
+            catch (Exception e)
             {
-                Device.BeginInvokeOnMainThread(() => { DisplayAlert("Fehler", "Die Seite konnte nciht geöffnet werden. Bitte ein Update durchführen. Sollte das Problem bestehen bleiben, bitte melden!", "Jawoll!"); });
+                Device.BeginInvokeOnMainThread(() => { DisplayAlert("Fehler", "Die Seite konnte nciht geöffnet werden. Bitte ein Update durchführen. Sollte das Problem bestehen bleiben, bitte melden!\n (Info für Nerds/Debugger: "+e.Message, "Jawoll!"); });
             }
             
         }
@@ -289,6 +289,13 @@ namespace ZKK_App
                 Title = "Kasse",
                 TargetType = typeof(interfaces.BillingPage)
             });*/
+
+            this.Add(new NavMenuItem()
+            {
+                Title = "Ablaufplan",
+                Icon = "cal.png",
+                TargetType = typeof(interfaces.PlanPage)
+            });
 
             this.Add(new NavMenuItem()
             {

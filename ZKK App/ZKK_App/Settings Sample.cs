@@ -65,6 +65,11 @@ namespace ZKK_App
         /// For security reasons, downloads are limited to this domain
         /// </summary>
         public static readonly string AppFilesBaseUrl = "";
+        
+        /// <summary>
+	/// The URL of the plan of the conference
+	/// </summary>
+        public static readonly string PlanTableUrl = "http://zkk.fsmpi.rwth-aachen.de/images/ablaufplan.jpg";
 
         /// <summary>
         /// The URL to the contents file used for updates
@@ -81,7 +86,7 @@ namespace ZKK_App
         /// <summary>
         /// The list of files that are well-known and should be downloaded on updates
         /// </summary>
-        public static readonly string[] ContentFiles = { "ak-common", "ak-zapf", "ak-kif", "ak-koma", "aklist-kif", "aklist-koma", "aklist-zapf", "aklist-zkk", "rooms", "roomfinder", "policies", "links" };
+        public static readonly string[] ContentFiles = { "ak-zkk", "ak-zapf", "ak-kif", "ak-koma", "aklist-kif", "aklist-koma", "aklist-zapf", "aklist-zkk", "rooms", "roomfinder", "policies", "links" };
 
         public static readonly string PropertyUpdateDate = "";
 
