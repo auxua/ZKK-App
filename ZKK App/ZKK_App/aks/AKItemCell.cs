@@ -94,14 +94,7 @@ namespace ZKK_App.aks
                 Children = { titleLabel }
             };*/
             
-            button = new Button
-            {
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-                Text = "Will ich nicht mehr hin",
-                MinimumWidthRequest = 120
-            };
-            button.Clicked += OnButtonClicked;
-
+            // Create Context-Menu
             var LikeAction = new MenuItem { Text = "Interessant" };
             LikeAction.SetBinding(MenuItem.CommandParameterProperty, new Binding("."));
             LikeAction.Clicked += OnLikeClicked;
@@ -124,7 +117,6 @@ namespace ZKK_App.aks
             //View = layout;
         }
 
-        Button button;
         Label titleLabel;
         Label likeLabel;
 
@@ -132,7 +124,7 @@ namespace ZKK_App.aks
         {
             likeLabel.Text = "Interesse bekundet\n";
             ((List<String>)Application.Current.Properties[Settings.PropertyLikesList]).Add(titleLabel.Text);
-            Application.Current.SavePropertiesAsync();
+            await Application.Current.SavePropertiesAsync();
             ZKK_App.akinterest.LikeManagement.SaveAKLikes();
         }
 
@@ -140,23 +132,8 @@ namespace ZKK_App.aks
         {
             likeLabel.Text = " \n";
             ((List<String>)Application.Current.Properties[Settings.PropertyLikesList]).Remove(titleLabel.Text);
-            Application.Current.SavePropertiesAsync();
+            await Application.Current.SavePropertiesAsync();
             ZKK_App.akinterest.LikeManagement.SaveAKLikes();
-        }
-
-        public void OnButtonClicked(object sender, EventArgs e)
-        {
-            if (((List<String>) Application.Current.Properties[Settings.PropertyLikesList]).Contains(titleLabel.Text))
-            {
-                //button.Text = "Will ich nicht mehr hin";
-                ((List<String>)Application.Current.Properties[Settings.PropertyLikesList]).Remove(titleLabel.Text);
-            }
-            else
-            {
-                //button.Text = "Zu diesem Will ich hin";
-                ((List<String>)Application.Current.Properties[Settings.PropertyLikesList]).Add(titleLabel.Text);
-            }
-            Application.Current.SavePropertiesAsync();
         }
 
         protected override void OnBindingContextChanged()

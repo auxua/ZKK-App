@@ -12,9 +12,10 @@ namespace ZKK_App.aklist
     {
 
         
-        public AKlistDayPage(IEnumerable<AKlistItem> list, string title)
+        public AKlistDayPage(IEnumerable<AKlistItem> list, string title, Boolean isDestrucive = false)
         {
-            
+            ZKK_App.akinterest.LikeManagement.LoadAKLikes();
+
             // create a listview
             ListView listview = new ListView();
 
@@ -23,7 +24,14 @@ namespace ZKK_App.aklist
             // Xamarin Forms 1.4 Update!
             listview.HasUnevenRows = true;
             // set the cell data template
-            listview.ItemTemplate = new DataTemplate(typeof(AKlistItemCell));
+            if (isDestrucive)
+            {
+                listview.ItemTemplate = new DataTemplate(typeof(AKListItemCellDestructiveOnly));
+            }
+            else
+            {
+                listview.ItemTemplate = new DataTemplate(typeof(AKlistItemCell));
+            }
 
             // HACK: workaround issue #894 for now
             if (Device.OS == TargetPlatform.iOS)
