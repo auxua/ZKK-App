@@ -349,6 +349,13 @@ namespace ZKK_App
 
             this.Add(new NavMenuItem()
             {
+                Title = "Raumliste",
+                Icon = "pin.png",
+                TargetType = typeof(interfaces.RoomListPage)
+            });
+
+            this.Add(new NavMenuItem()
+            {
                 Title = "Gemeinschaftsstandards",
                 Icon = "thumbsup.png",
                 //Title = "Satzungen und Policies",

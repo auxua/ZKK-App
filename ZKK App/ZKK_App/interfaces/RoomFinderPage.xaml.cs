@@ -90,7 +90,7 @@ namespace ZKK_App.interfaces
             }
             //Close File, finished!
             sr.Close();
-            Console.WriteLine("Finished Database!");
+            //Console.WriteLine("Finished Database!");
         }
 
         /// <summary>
