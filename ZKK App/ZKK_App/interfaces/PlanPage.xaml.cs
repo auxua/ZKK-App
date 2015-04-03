@@ -8,6 +8,8 @@ using System.IO;
 
 using Xamarin.Forms;
 
+using Android;
+
 namespace ZKK_App.interfaces
 {
     public partial class PlanPage : ContentPage
@@ -40,16 +42,17 @@ namespace ZKK_App.interfaces
             fs.Close();
             String base64String = Convert.ToBase64String(ImageData);
             // embed in HTML
-            string html = "<html><body><img src=\"data:image/jpg;base64," + base64String + "\" /></body></html>";
+            string html = "<html><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=0.20, maximum-scale=3.0 user-scalable=1\" /></head><body><img src=\"data:image/jpg;base64," + base64String + "\" style=\"width=100%\" /></body></html>";
             // Create webview content for the string
             HtmlWebViewSource htmlSource = new HtmlWebViewSource();
             htmlSource.Html = html;
 
-
             WebView wv = new WebView
             {
-                Source = htmlSource
+                Source = htmlSource,
             };
+
+            
 
             Content = wv;
         }

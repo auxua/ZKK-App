@@ -39,6 +39,14 @@ namespace ZKK_App.aklist
                 listview.ItemsSource = new string[1] { "" };
                 Icon = "cal.png";
             }
+            if (Device.OS == TargetPlatform.iOS)
+            {
+                listview.Header = "Einträge zur Seite wischen für weitere Optionen";
+            }
+            else
+            {
+                listview.Header = "Einträge gedrückt halten für weitere Optionen";
+            }
 
 
             // Perform Data Binding

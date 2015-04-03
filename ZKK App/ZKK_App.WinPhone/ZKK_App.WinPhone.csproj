@@ -1,10 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>10.0.20506</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{75A288D8-BF3F-44B5-8776-413BB3A00B0A}</ProjectGuid>
     <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
@@ -117,6 +115,18 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Files\ak-kif" />
+    <Content Include="Files\ak-koma" />
+    <Content Include="Files\ak-zapf" />
+    <Content Include="Files\ak-zkk" />
+    <Content Include="Files\aklist-kif" />
+    <Content Include="Files\aklist-koma" />
+    <Content Include="Files\aklist-zapf" />
+    <Content Include="Files\aklist-zkk" />
+    <Content Include="Files\links" />
+    <Content Include="Files\policies" />
+    <Content Include="Files\roomfinder" />
+    <Content Include="Files\rooms" />
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
@@ -125,12 +135,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cal.png" />
-    <Content Include="Files\geier3d.png" />
+    <Content Include="Files\couvenhalle500.jpg" />
+    <Content Include="Files\infoportrait.jpg" />
     <Content Include="Files\news.txt" />
     <Content Include="Assets\AlignmentGrid.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Files\plan.jpg" />
+    <Content Include="Files\semi90500.jpg" />
+    <Content Include="Files\st500.jpg" />
+    <Content Include="Files\tempel500.jpg" />
     <Content Include="house.png" />
     <Content Include="info.png" />
     <Content Include="list.png" />

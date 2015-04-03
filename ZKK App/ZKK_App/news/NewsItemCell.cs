@@ -46,7 +46,8 @@ namespace ZKK_App.news
                 HorizontalOptions = LayoutOptions.StartAndExpand,
                 Children = { dateLabel, titleLabel, detailLabel }
             };
-            View = layout;
+            //View = layout;
+            View = new Frame { Content = layout };
         }
 
         protected override void OnBindingContextChanged()

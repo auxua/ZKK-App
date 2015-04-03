@@ -195,9 +195,9 @@ namespace ZKK_App.interfaces
 
             downloadFails = false;
 
-            downloads = Settings.ContentFiles.Length + 2;
+            downloads = Settings.ContentFiles.Length + 1;
             this.DownloadFile(Settings.NewsFileSource, "news.txt");
-            this.DownloadFile(Settings.PlanTableUrl, "plan.jpg");
+            //this.DownloadFile(Settings.PlanTableUrl, "plan.jpg");
 
 
             // Step 2: Well-known text files. (See Settings for details)

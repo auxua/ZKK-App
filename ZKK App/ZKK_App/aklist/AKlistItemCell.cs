@@ -87,7 +87,8 @@ namespace ZKK_App.aklist
                 HorizontalOptions = LayoutOptions.StartAndExpand,
                 Children = { dateLabel, titleLabel, detailLabel, temp, likeLabel, temp }
             };
-            View = layout;
+            View = new Frame { Content = layout };
+                
         }
 
         async void OnLikeClicked(object sender, EventArgs e)

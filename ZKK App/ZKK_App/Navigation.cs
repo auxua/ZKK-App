@@ -202,7 +202,7 @@ namespace ZKK_App
             layout.SetBinding(Layout.BackgroundColorProperty, new Binding("BackgroundColor"));
 
             if (Device.OS == TargetPlatform.WinPhone)
-                layout.HeightRequest = 50;
+                layout.HeightRequest = 80;
 
             View = layout;
         }

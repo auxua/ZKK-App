@@ -10,7 +10,7 @@ namespace ZKK_App.places
         public PlaceItemPage(PlaceItem p)
         {
             Label titleLabel = new Label {
-                YAlign = TextAlignment.Center,
+                //YAlign = TextAlignment.Center,
                 XAlign = TextAlignment.Center,
                 TextColor = Color.FromHex("00549F"),
                 FontAttributes = FontAttributes.Bold,
@@ -22,7 +22,7 @@ namespace ZKK_App.places
 
             Label detailLabel = new Label
             {
-                YAlign = TextAlignment.Center,
+                //YAlign = TextAlignment.Center,
                 XAlign = TextAlignment.Center,
                 FontAttributes = Xamarin.Forms.FontAttributes.Italic,
                 FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
@@ -32,7 +32,7 @@ namespace ZKK_App.places
 
             Label commentLabel = new Label
             {
-                YAlign = TextAlignment.Center,
+                //YAlign = TextAlignment.Center,
                 XAlign = TextAlignment.Start,
                 FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
                 Text = p.Comment
@@ -48,7 +48,7 @@ namespace ZKK_App.places
                 MinimumHeightRequest = 200,
                 MinimumWidthRequest = 200,
                 VerticalOptions = LayoutOptions.Start,
-                HeightRequest = 500,
+                //HeightRequest = 500,
                 Source = ImageSource.FromFile(path)
             };
             //image.SetBinding(Image.SourceProperty, "Imagename");
@@ -59,7 +59,7 @@ namespace ZKK_App.places
                 Orientation = StackOrientation.Vertical,
                 HorizontalOptions = LayoutOptions.Center,
                 Children = { titleLabel, image, detailLabel, commentLabel },
-                VerticalOptions = LayoutOptions.Center
+                VerticalOptions = LayoutOptions.Start
             };
 
             Title = p.Title;

@@ -3,8 +3,6 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{0E0F0703-789E-490E-B866-CBE4E5B1BA11}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
@@ -63,8 +61,8 @@
     <CodesignKey>iPhone Distribution: Arno Schmetz</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>a901bea1-7744-47d6-9c36-6902ab87a022</CodesignProvision>
-    <CodesignResourceRules />
-    <CodesignExtraArgs />
+    <CodesignExtraArgs>
+    </CodesignExtraArgs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
@@ -95,6 +93,18 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
+    <BundleResource Include="Files\ak-kif" />
+    <BundleResource Include="Files\ak-koma" />
+    <BundleResource Include="Files\ak-zapf" />
+    <BundleResource Include="Files\ak-zkk" />
+    <BundleResource Include="Files\aklist-kif" />
+    <BundleResource Include="Files\aklist-koma" />
+    <BundleResource Include="Files\aklist-zapf" />
+    <BundleResource Include="Files\aklist-zkk" />
+    <BundleResource Include="Files\links" />
+    <BundleResource Include="Files\policies" />
+    <BundleResource Include="Files\roomfinder" />
+    <BundleResource Include="Files\rooms" />
     <None Include="Info.plist" />
     <Compile Include="PersonalStorage_iOS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -116,19 +126,16 @@
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
-    <Reference Include="Xamarin.Forms.Core, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.Forms.Core">
       <HintPath>..\..\packages\Xamarin.Forms.1.4.0.6341\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Forms.Platform.iOS, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Xamarin.Forms.Platform.iOS">
       <HintPath>..\..\packages\Xamarin.Forms.1.4.0.6341\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Forms.Xaml, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\..\packages\Xamarin.Forms.1.4.0.6341\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\geier3d.png" />
@@ -140,9 +147,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Files\news.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Files\geier3d.png" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />
@@ -185,6 +189,24 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\rss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Files\couvenhalle500.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Files\infoportrait.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Files\semi90500.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Files\st500.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Files\tempel500.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Files\plan.jpg" />
   </ItemGroup>
   <Import Project="..\ZKK_App\ZKK_App.projitems" Label="Shared" Condition="Exists('..\ZKK_App\ZKK_App.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

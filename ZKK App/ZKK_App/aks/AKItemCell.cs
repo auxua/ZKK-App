@@ -113,7 +113,8 @@ namespace ZKK_App.aks
                 VerticalOptions = LayoutOptions.Center,
                 Children = { titleLabel, detailLabel, temp, likeLabel, temp }
             };
-            View = outerlayout;
+            View = new Frame { Content = outerlayout };
+            //View = outerlayout;
             //View = layout;
         }
 
