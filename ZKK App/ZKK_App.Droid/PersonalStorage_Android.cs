@@ -34,8 +34,20 @@ namespace ZKK_App.Droid
                 {
                     var path = this.GetFullFilePath(s);
                     using (var asset = Forms.Context.Assets.Open(s))
-                    using (var dest = File.Create(path))
-                        asset.CopyTo(dest);
+                        if (!File.Exists(path))
+                        {
+                            using (var dest = File.Create(path))
+                                asset.CopyTo(dest);
+                        }
+                        else
+                        {
+                            // In Debugging-Version, replace existing files (effectively resetting every update)
+                            // In Release-Version, keep updated files on Device
+#if DEBUG
+                            using (var dest = File.Create(path))
+                                asset.CopyTo(dest);
+#endif
+                        }
                 }
                 catch (Exception)
                 {

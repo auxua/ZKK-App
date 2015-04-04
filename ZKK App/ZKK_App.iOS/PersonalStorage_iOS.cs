@@ -27,11 +27,17 @@ namespace ZKK_App.iOS
             {
                 if (File.Exists(path))
                 {
-                    // This path is a file
+                    // This path is a file - get the desired location on device for it
                     var target = this.GetFullFilePath(path.Substring(assetsFolder.Length));
 
+                    // In Debugging-Version, replace existing files (effectively resetting every update)
+                    // In Release-Version, keep updated files on Device
+#if DEBUG
+                    File.Copy(path, target);
+#else
                     if (!File.Exists(target))
                         File.Copy(path, target);
+#endif
                 }
                 else
                 {

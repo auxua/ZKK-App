@@ -9,8 +9,6 @@ using Xamarin.Forms;
 
 
 [assembly: Xamarin.Forms.Dependency(typeof(PersonalStorage_WinPhone))]
-
-
 namespace ZKK_App.WinPhone
 {
     public class PersonalStorage_WinPhone : IPersonalStorage
@@ -20,7 +18,39 @@ namespace ZKK_App.WinPhone
         {
             //On Windows Phone their is no need for this!
             //We can use the Files directly
+            string[] files = Directory.GetFiles("Files/");
+
+            if (!Directory.Exists("Data"))
+            {
+                Directory.CreateDirectory("Data");
+            }
+
+            foreach (string file in files)
+            {
+                if (File.Exists(file))
+                {
+                    // it is a file and no directory
+                    // get the file without directory prefix
+                    string theFile = file.Remove(0, 6);
+                    string target = this.GetFullFilePath(theFile);
+                    
+                    if (!File.Exists(target))
+                    {
+                        File.Copy(file, target);
+                    }
+                    else
+                    {
+                        // Copy the file only if being in debug-mode
+#if DEBUG
+                        File.Copy(file,target);
+#endif
+                    }
+                }
+            }
+            
             return true;
+
+
               
         }
 
@@ -28,7 +58,9 @@ namespace ZKK_App.WinPhone
         public string GetFullFilePath(string name)
         {
             //On Windows Phone it is in the Files-SubDir.
-            String fname = "Files/" + name;
+            //String fname = "Files/" + name;
+            
+            String fname = "Data/" + name;
             return fname;
         }
     }

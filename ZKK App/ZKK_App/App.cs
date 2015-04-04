@@ -22,10 +22,13 @@ namespace ZKK_App
                 // Not defined the News-Source (Default: Online)
                 Application.Current.Properties[Settings.PropertyNewsSource] = "Online";
             }
+
+            // First satrt, copy assets if needed
+            DependencyService.Get<IPersonalStorage>().CopyAssets();
+            
+            
             if (!Application.Current.Properties.ContainsKey(Settings.PropertyUpdateDate))
             {
-                // First satrt, copy assets if needed
-                DependencyService.Get<IPersonalStorage>().CopyAssets();
                 // Set property - "Datenstand" is the version/date of the data
                 Application.Current.Properties[Settings.PropertyUpdateDate] = "Initialzustand";
             }

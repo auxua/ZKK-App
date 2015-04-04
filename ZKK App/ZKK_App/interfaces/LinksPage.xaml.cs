@@ -34,7 +34,6 @@ namespace ZKK_App.interfaces
             
             Title = "Links (Antippen zum Öffnen)";
 
-            // Create a Scrollview to allow Scrolling on the Page
             Content = listView;
         }
 

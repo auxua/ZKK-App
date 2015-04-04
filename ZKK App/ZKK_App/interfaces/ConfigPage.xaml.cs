@@ -171,7 +171,7 @@ namespace ZKK_App.interfaces
         /// </summary>
         void OnButtonClicked(object sender, EventArgs e)
         {
-            //Teill user what will happen
+            // Tell user what will happen
             UpdateLabel.Text = "\n Starting Update...";
 
             //TODO: A file versioning or something to avoid duplicate downloads

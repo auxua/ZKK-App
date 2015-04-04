@@ -8,8 +8,6 @@ using System.IO;
 
 using Xamarin.Forms;
 
-using Android;
-
 namespace ZKK_App.interfaces
 {
     public partial class PlanPage : ContentPage

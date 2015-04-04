@@ -26,8 +26,7 @@ namespace ZKK_App.news
                 XAlign = TextAlignment.Center,
                 TextColor = Color.FromHex("00549F"),
                 FontAttributes = FontAttributes.Bold,
-                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label))
-
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
             };
             titleLabel.SetBinding(Label.TextProperty,"Title");
 
@@ -41,13 +40,14 @@ namespace ZKK_App.news
 
             var layout = new StackLayout
             {
-                Padding = new Thickness(20, 0, 0, 0),
+                Padding = new Thickness(20, 10, 5, 5),
                 Orientation = StackOrientation.Vertical,
                 HorizontalOptions = LayoutOptions.StartAndExpand,
                 Children = { dateLabel, titleLabel, detailLabel }
             };
-            //View = layout;
-            View = new Frame { Content = layout };
+
+            View = layout;
+            
         }
 
         protected override void OnBindingContextChanged()

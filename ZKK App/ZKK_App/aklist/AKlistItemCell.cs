@@ -84,7 +84,7 @@ namespace ZKK_App.aklist
             {
                 Padding = new Thickness(20, 0, 20, 0),
                 Orientation = StackOrientation.Vertical,
-                HorizontalOptions = LayoutOptions.StartAndExpand,
+                HorizontalOptions = LayoutOptions.Fill,
                 Children = { dateLabel, titleLabel, detailLabel, temp, likeLabel, temp }
             };
             View = new Frame { Content = layout };
