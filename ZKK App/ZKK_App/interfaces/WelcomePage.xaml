@@ -26,11 +26,13 @@
           <Label.Text>
 Dies ist die ZKK-App.
             
-Falls die Navigation nicht sichtbar ist und auch kein Menü-Knopf erscheint, kann das Menü mit einer Wisch-Geste von Links nach Rechts erreicht werden.
+In der Navigation sind die verschiedenen Bereiche zu finden.
 
-Im Bereich Einstellungen/Update kannst du die wichtigsten Einstellungen vornehmen und auch die Daten der App komplett aktualisieren.
+Im Bereich Update kann ein Update aller Daten gemacht werden, die dann auch Offline verfügbar sind. Die News können auch seperat mittels Pull-To-Refresh aktualisiert werden. Aus technischen Gründen gibt es derzeit keine Beschreibungstexte bei den ZaPF-AKs.
+              
+Außerdem gibt es eine Liste der AKs der Konferenzen und im Laufe der Konferenz auch die entsprechenden AK-Pläne. Dort kann jeweils auch ein AK als interessant markiert werden, wodurch er im eigenen Stundenplan auftaucht.
 
-Diese App übernimmt keinen Anspruch auf Vollständigkeit und Korrektheit. Im Zweifelsfall gilt, was die Orga sagt.
+Bei Problemen mit der App einfach bei Arno (auX) melden. Diese App übernimmt keinen Anspruch auf Vollständigkeit und Korrektheit. Im Zweifelsfall gilt, was die Orga sagt.
 
             Viel Spaß mit der App bei der ZKK!
           </Label.Text>

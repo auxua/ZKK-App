@@ -16,8 +16,7 @@ namespace ZKK_App.WinPhone
 
         public bool CopyAssets()
         {
-            //On Windows Phone their is no need for this!
-            //We can use the Files directly
+            // On Windows Phone, Copy from Files/ to Data/
             string[] files = Directory.GetFiles("Files/");
 
             if (!Directory.Exists("Data"))
@@ -42,7 +41,7 @@ namespace ZKK_App.WinPhone
                     {
                         // Copy the file only if being in debug-mode
 #if DEBUG
-                        File.Copy(file,target);
+                        File.Copy(file,target,true);
 #endif
                     }
                 }

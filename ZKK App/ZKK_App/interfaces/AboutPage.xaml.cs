@@ -15,6 +15,11 @@ namespace ZKK_App.interfaces
 		{
 			//InitializeComponent ();
 
+            string debugText = "";
+#if DEBUG
+            debugText = " DEBUG ";
+#endif
+
             StackLayout stack = new StackLayout
             {
                 Orientation = StackOrientation.Vertical,
@@ -31,7 +36,7 @@ namespace ZKK_App.interfaces
                     },
                     new Label
                     {
-                        Text = "Version: "+Assembly.GetExecutingAssembly().GetName().Version+"\n"
+                        Text = "Version: "+Assembly.GetExecutingAssembly().GetName().Version+debugText+"\n"
                     },
                     new Label 
                     {

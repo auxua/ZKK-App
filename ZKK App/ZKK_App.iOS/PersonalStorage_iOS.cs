@@ -33,7 +33,7 @@ namespace ZKK_App.iOS
                     // In Debugging-Version, replace existing files (effectively resetting every update)
                     // In Release-Version, keep updated files on Device
 #if DEBUG
-                    File.Copy(path, target);
+                    File.Copy(path, target,true);
 #else
                     if (!File.Exists(target))
                         File.Copy(path, target);
