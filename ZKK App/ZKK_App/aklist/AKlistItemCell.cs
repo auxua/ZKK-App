@@ -9,8 +9,14 @@ namespace ZKK_App.aklist
 
     public class AKlistItemCell : ViewCell
     {
-
+        /// <summary>
+        /// This label is signaling the user whether the Workshop is liked or not
+        /// </summary>
         Label likeLabel;
+
+        /// <summary>
+        /// The label containing the Workshop Title
+        /// </summary>
         Label titleLabel;
 
         Boolean DestructiveOnly;
@@ -92,18 +98,26 @@ namespace ZKK_App.aklist
             View = layout;
         }
 
+        /// <summary>
+        /// User clicked the "liked"-button
+        /// Add the Workshop to List of liked ones
+        /// </summary>
         void OnLikeClicked(object sender, EventArgs e)
         {
             likeLabel.Text = "Interesse bekundet\n";
             akinterest.LikeManagement.AddLike(titleLabel.Text);
         }
 
+        /// <summary>
+        /// User clicked the "unlike" button
+        /// remove from likes-List.
+        /// In Destructive Mode remove this element from data source of the Page
+        /// </summary>
         void OnUnlikeClicked(object sender, EventArgs e)
         {
             likeLabel.Text = " \n";
             // Remove from Like-List
             akinterest.LikeManagement.RemoveLike(titleLabel.Text);
-            ZKK_App.akinterest.LikeManagement.SaveAKLikes();
             // For personal plan, remove element from ItemSource
             if (DestructiveOnly)
             {
@@ -135,6 +149,9 @@ namespace ZKK_App.aklist
             }
         }
 
+        /// <summary>
+        /// Traverses the Parent-Hierarchy finding the containing page
+        /// </summary>
         private AKlistDayPage GetParentPage()
         {
             var mParent = this.Parent;
@@ -163,6 +180,9 @@ namespace ZKK_App.aklist
             CheckLike();
         }
 
+        /// <summary>
+        /// Updates/Refreshes the Likes and updates the likelabel
+        /// </summary>
         private void CheckLike()
         {
             try

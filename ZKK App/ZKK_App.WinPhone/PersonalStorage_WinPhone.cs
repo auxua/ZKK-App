@@ -56,7 +56,7 @@ namespace ZKK_App.WinPhone
 
         public string GetFullFilePath(string name)
         {
-            //On Windows Phone it is in the Files-SubDir.
+            //On Windows Phone it is in the Data-SubDir.
             //String fname = "Files/" + name;
             
             String fname = "Data/" + name;

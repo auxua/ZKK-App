@@ -89,17 +89,26 @@ namespace ZKK_App.aklist
             database.Sort();
         }
 
-
+        /// <summary>
+        /// Returns the List of the Days existing in the database
+        /// </summary>
         public IEnumerable<string> GetDays()
         {
             return Days;
         }
 
+        /// <summary>
+        /// Returns all Items corresponding to the Day d
+        /// </summary>
         public IEnumerable<AKlistItem> GetItems(string d)
         {
             return database.FindAll(item => item.Day == d);
         }
 
+        /// <summary>
+        /// Returns all Items corresponding to the Day d.
+        /// Creates an Observable Collection for bindings
+        /// </summary>
         public ObservableCollection<AKlistItem> GetObservableItems(string d)
         {
             return new ObservableCollection<AKlistItem>(this.GetItems(d));

@@ -50,7 +50,7 @@ namespace ZKK_App.interfaces
                 Source = htmlSource,
             };
 
-            
+            Title = "Ablaufplan";
 
             Content = wv;
         }

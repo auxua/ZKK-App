@@ -14,6 +14,7 @@ namespace ZKK_App.aks
     /// </summary>
     class AKDB
     {
+        // The databases of the conferences
         List<AKItem> zapf;
         List<AKItem> kif;
         List<AKItem> koma;
@@ -93,6 +94,9 @@ namespace ZKK_App.aks
             sr.Close();
         }
 
+        /// <summary>
+        /// Returns a List of the Workshops of the requested conference
+        /// </summary>
         public IEnumerable<AKItem> GetItems(Conferences conf)
         {
             switch (conf)

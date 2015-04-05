@@ -6,6 +6,7 @@ namespace ZKK_App.aklist
 {
     /// <summary>
     /// Just a small AKlistItem-Class for being a Model in Model-View-Data for the workshopplan
+    /// Is Queatebly and Comparable (making implicit sorting possible!)
     /// </summary>
     public class AKlistItem : IEquatable<AKlistItem>, IComparable<AKlistItem>
     {
@@ -32,7 +33,11 @@ namespace ZKK_App.aklist
             return name1.CompareTo(name2);
         }
 
-        // Default comparer for Part type.
+        /// <summary>
+        /// The Comparer compares in this order:
+        ///     * Day
+        ///     * Time
+        /// </summary>
         public int CompareTo(AKlistItem comparePart)
         {
             // A null value means that this object is greater.
@@ -57,6 +62,10 @@ namespace ZKK_App.aklist
         {
             return (Day+Time+Room+Title).GetHashCode();
         }
+
+        /// <summary>
+        /// Compare element by element
+        /// </summary>
         public bool Equals(AKlistItem other)
         {
             if (other == null) return false;

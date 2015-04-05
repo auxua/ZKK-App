@@ -11,9 +11,18 @@ namespace ZKK_App.aklist
     /// </summary>
     class AKlistDayPage : ContentPage
     {
-
+        /// <summary>
+        /// The Listview on the page, containing the Workshops
+        /// Public to outside to enable children alterning the item Source (for destructive actions)
+        /// </summary>
         public ListView listview;
         
+        /// <summary>
+        /// Creates a page with the workshops of this day
+        /// </summary>
+        /// <param name="list">A list of the workshops for this day</param>
+        /// <param name="title">The Page title (usually the Day)</param>
+        /// <param name="isDestrucive">true, if only Workshops of intereset should be shown, enabling (only) destructive user actions</param>
         public AKlistDayPage(ObservableCollection<AKlistItem> list, string title, Boolean isDestrucive = false)
         {
             ZKK_App.akinterest.LikeManagement.LoadAKLikes();
@@ -21,9 +30,7 @@ namespace ZKK_App.aklist
             // create a listview
             listview = new ListView();
 
-            // TODO: Fix this for long texts (texts can overflow into next view!)
-            //listview.RowHeight = 120;
-            // Xamarin Forms 1.4 Update!
+            // Xamarin Forms Update!
             listview.HasUnevenRows = true;
             // set the cell data template
             if (isDestrucive)
@@ -41,6 +48,7 @@ namespace ZKK_App.aklist
                 listview.ItemsSource = new string[1] { "" };
                 Icon = "cal.png";
             }
+            // Different Context-Actions for iOS and WP/Android
             if (Device.OS == TargetPlatform.iOS)
             {
                 listview.Header = "Einträge zur Seite wischen für weitere Optionen";

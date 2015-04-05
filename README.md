@@ -15,6 +15,18 @@ Der Quelltext der App steht unter der BSD 2-clause Lizenz zur Verfügung.
 Dieses Projekt nutzt das Xamarin Framework (Xamarin.iOS, Xamarin.Android) und das Windows Phone SDK.
 Da es sich um ein Shared-Project handelt, ist für Visual Studio mindestens die Version 2013 Update 2 notwendig. Xamarin/WindowsPhone SDK können weitere Anforderungen stellen.
 
+## Tests
+Diese App wurde bis dato getestet (funktionierend) auf:
+* Nokie Lumia 520 (WindowsPhone 8.1)
+* Cynus T2 (Android 4.1.1)
+* Emulator (Tablet, Android 4.4)
+* Emulator (Phone, Android 5.0)
+* iPhone 6 (iOS 8.2)
+* iPad Retina (iOS 8.2)
+* iPhone 4 (iOS 7.1, jailbreak)
+* Emulator (iPad Air/iPhone 6plus - iOS 8.2)
+
+
 ---
 
 # ZKK-App
@@ -31,3 +43,14 @@ The Source Code of the ZKK App is licensed under the BSD 2-clause License.
 ## Frameworks/Dependencies
 This project uses the Xamarin-Framework (Xamarin.iOS, Xamarin.Android) and the Windows Phone SDK.
 It is a Shared Project, needing at least Visual Studio 2013 Update 2. Xamarin/WindowsPhone SDK may have further requirements.
+
+## Tests
+This App has been tested against (working):
+* Nokie Lumia 520 (WindowsPhone 8.1)
+* Cynus T2 (Android 4.1.1)
+* Emulator (Tablet, Android 4.4)
+* Emulator (Phone, Android 5.0)
+* iPhone 6 (iOS 8.2)
+* iPad Retina (iOS 8.2)
+* iPhone 4 (iOS 7.1, jailbreak)
+* Emulator (iPad Air/iPhone 6plus - iOS 8.2)
