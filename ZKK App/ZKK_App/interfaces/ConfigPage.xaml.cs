@@ -31,6 +31,10 @@ namespace ZKK_App.interfaces
         /// </summary>
         public static Label UpdateLabel;
 
+        /// <summary>
+        /// The label that informs the user about the last date of updating data
+        /// </summary>
+        public Label DatenLabel;
 
         public ConfigPage()
         {
@@ -42,7 +46,7 @@ namespace ZKK_App.interfaces
 
 
             //Create a Picker for the Conference
-            Picker picker = new Picker
+            /*Picker picker = new Picker
             {
                 Title = "Konferenz",
                 VerticalOptions = LayoutOptions.CenterAndExpand,
@@ -100,10 +104,10 @@ namespace ZKK_App.interfaces
                     Application.Current.Properties[Settings.PropertyNewsSource] = "Online";
                 else
                     Application.Current.Properties[Settings.PropertyNewsSource] = "Offline";
-            };
+            };*/
 
             //The label for the DatenStand
-            Label DatenLabel = new Label
+            DatenLabel = new Label
             {
                 XAlign = TextAlignment.Center,
                 FontAttributes = FontAttributes.Italic,
@@ -213,6 +217,7 @@ namespace ZKK_App.interfaces
 
         }
 
+        #region Download (Handling)
 
         /// <summary>
         /// A simple Wrapper for the Download of a File.
@@ -283,10 +288,22 @@ namespace ZKK_App.interfaces
                 else
                 {
                     // Fails occured! Inform user
-                    // TODO: Think about data integraty..
                     Device.BeginInvokeOnMainThread(() => { DisplayAlert("Update", "Update konnte nicht erfolgreich beendet werden", "Schade..."); });
+                    return;
                 }
+                this.RefreshUpdateLabel();
             }
+        }
+
+        /// <summary>
+        /// Updates the Datenlabel, informing the User about the current version of the Files.
+        /// Will automatically update on the Main/UI Thread
+        /// </summary>
+        private void RefreshUpdateLabel()
+        {
+            Application.Current.SavePropertiesAsync();
+            string text = "Datenstand: " + (string)Application.Current.Properties[Settings.PropertyUpdateDate] + "\n ";
+            Device.BeginInvokeOnMainThread(() => { this.DatenLabel.Text = text; });
         }
 
 
@@ -403,5 +420,7 @@ namespace ZKK_App.interfaces
                 //success = true;
             }
         }
+
+        #endregion
     }
 }

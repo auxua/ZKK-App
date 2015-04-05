@@ -70,9 +70,9 @@
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Distribution: Arno Schmetz</CodesignKey>
+    <CodesignKey>iPhone Developer: Arno Schmetz %28T59AM72CW4%29</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>a901bea1-7744-47d6-9c36-6902ab87a022</CodesignProvision>
+    <CodesignProvision>954cc807-1a8e-4d23-a981-44856fa1f9ab</CodesignProvision>
     <CodesignExtraArgs>
     </CodesignExtraArgs>
     <MtouchSdkVersion>8.2</MtouchSdkVersion>
@@ -88,6 +88,7 @@
     <MtouchUseRefCounting>False</MtouchUseRefCounting>
     <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
     <MtouchI18n />
+    <CodesignResourceRules />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>

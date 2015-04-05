@@ -82,35 +82,32 @@ namespace ZKK_App.aklist
 
             var layout = new StackLayout
             {
-                Padding = new Thickness(20, 0, 20, 0),
+                Padding = new Thickness(20, 10, 5, 5),
                 Orientation = StackOrientation.Vertical,
                 HorizontalOptions = LayoutOptions.Fill,
                 Children = { dateLabel, titleLabel, detailLabel, temp, likeLabel, temp }
             };
-            View = new Frame { Content = layout };
+            //View = new Frame { Content = layout };
+            View = layout;
                 
         }
 
-        async void OnLikeClicked(object sender, EventArgs e)
+        void OnLikeClicked(object sender, EventArgs e)
         {
             likeLabel.Text = "Interesse bekundet\n";
-            ((List<String>)Application.Current.Properties[Settings.PropertyLikesList]).Add(titleLabel.Text);
-            await Application.Current.SavePropertiesAsync();
-            ZKK_App.akinterest.LikeManagement.SaveAKLikes();
+            akinterest.LikeManagement.AddLike(titleLabel.Text);
         }
 
-        async void OnUnlikeClicked(object sender, EventArgs e)
+        void OnUnlikeClicked(object sender, EventArgs e)
         {
             likeLabel.Text = " \n";
-            ((List<String>)Application.Current.Properties[Settings.PropertyLikesList]).Remove(titleLabel.Text);
-            await Application.Current.SavePropertiesAsync();
+            akinterest.LikeManagement.RemoveLike(titleLabel.Text);
             ZKK_App.akinterest.LikeManagement.SaveAKLikes();
             if (DestructiveOnly)
             {
                 this.View.IsVisible = false;
                 this.View.IsEnabled = false;
                 this.IsEnabled = false;
-                
             }
         }
 
@@ -121,10 +118,9 @@ namespace ZKK_App.aklist
             // the parents binding context.
             //View.BindingContext = BindingContext;
             base.OnBindingContextChanged();
-            List<String> list = Application.Current.Properties[Settings.PropertyLikesList] as List<String>;
             try
             {
-                if (list.Contains(titleLabel.Text))
+                if (akinterest.LikeManagement.CheckName(titleLabel.Text))
                 {
                     likeLabel.Text = "Interesse bekundet\n";
                 }
@@ -135,7 +131,7 @@ namespace ZKK_App.aklist
             }
             catch (Exception e)
             {
-                likeLabel.Text = " Konnte Daten nciht laden: " + e.Message + list.ToString();
+                likeLabel.Text = " Konnte Daten nciht laden: " + e.Message;
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.IO;
@@ -16,9 +17,10 @@ namespace ZKK_App.akinterest
     class AKlistDBFull
     {
         /// <summary>
-        /// The Items are stored inthis database
+        /// The Items are stored in this database
         /// </summary>
         List<AKlistItem> database;
+        //ObservableCollection<AKlistItem> database;
 
         /// <summary>
         /// Stores the names of the days that are existing
@@ -34,6 +36,7 @@ namespace ZKK_App.akinterest
             // import from file
             // In this case, import from every file
             database = new List<AKlistItem>();
+            //database = new ObservableCollection<AKlistItem>();
 
             string path ="";
             List<String> Sources = new List<string>();
@@ -49,7 +52,7 @@ namespace ZKK_App.akinterest
 
             Days = new List<string>();
             LikeManagement.LoadAKLikes();
-            List<String> likes = Application.Current.Properties[Settings.PropertyLikesList] as List<String>;
+            System.Collections.ObjectModel.ObservableCollection<String> likes = LikeManagement.GetList();
 
             String line;
             String[] separators = new String[] { Settings.TextFileDelimiter };
