@@ -90,6 +90,8 @@ namespace ZKK_App.akinterest
 
             // Apply a sorting to the days. For this case, we can simply use string-sorting
             Days.Sort();
+            // Sort the whole DB
+            database.Sort();
         }
 
 

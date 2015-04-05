@@ -85,6 +85,8 @@ namespace ZKK_App.aklist
             sr.Close();
             // Apply a sorting to the days. For this case, we can simply use string-sorting
             Days.Sort();
+            // Apply sorting to the whole database (based on the AKlistItem)
+            database.Sort();
         }
 
 
