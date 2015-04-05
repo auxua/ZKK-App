@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
 namespace ZKK_App.aklist
@@ -11,13 +12,14 @@ namespace ZKK_App.aklist
     class AKlistDayPage : ContentPage
     {
 
+        public ListView listview;
         
-        public AKlistDayPage(IEnumerable<AKlistItem> list, string title, Boolean isDestrucive = false)
+        public AKlistDayPage(ObservableCollection<AKlistItem> list, string title, Boolean isDestrucive = false)
         {
             ZKK_App.akinterest.LikeManagement.LoadAKLikes();
 
             // create a listview
-            ListView listview = new ListView();
+            listview = new ListView();
 
             // TODO: Fix this for long texts (texts can overflow into next view!)
             //listview.RowHeight = 120;

@@ -24,7 +24,7 @@ namespace ZKK_App.interfaces
             // Create pages and provide data
             foreach (string day in db.GetDays())
             {
-                AKlistDayPage daypPage = new AKlistDayPage(db.GetItems(day),day);
+                AKlistDayPage daypPage = new AKlistDayPage(db.GetObservableItems(day),day);
                 Children.Add(daypPage);
             }
 

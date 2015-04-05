@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
 namespace ZKK_App.aklist
@@ -89,7 +90,6 @@ namespace ZKK_App.aklist
             };
             //View = new Frame { Content = layout };
             View = layout;
-                
         }
 
         void OnLikeClicked(object sender, EventArgs e)
@@ -101,14 +101,56 @@ namespace ZKK_App.aklist
         void OnUnlikeClicked(object sender, EventArgs e)
         {
             likeLabel.Text = " \n";
+            // Remove from Like-List
             akinterest.LikeManagement.RemoveLike(titleLabel.Text);
             ZKK_App.akinterest.LikeManagement.SaveAKLikes();
+            // For personal plan, remove element from ItemSource
             if (DestructiveOnly)
             {
-                this.View.IsVisible = false;
+                /*this.View.IsVisible = false;
                 this.View.IsEnabled = false;
-                this.IsEnabled = false;
+                this.IsEnabled = false;*/
+                // Get the containing Page
+                AKlistDayPage mpar = GetParentPage();
+                // Get Item Source
+                ObservableCollection<AKlistItem> items = mpar.listview.ItemsSource as ObservableCollection<AKlistItem>;
+                AKlistItem item = null;
+                // Find the corresponding element
+                foreach (AKlistItem i in items)
+                {
+                    if (i.Title == titleLabel.Text)
+                    {
+                        item = i;
+                        break;
+                    }
+                }
+                // Not found? return (should never happen)
+                if (item == null)
+                {
+                    return;
+                }
+                // Remove it from Source
+                items.Remove(item);
+
             }
+        }
+
+        private AKlistDayPage GetParentPage()
+        {
+            var mParent = this.Parent;
+
+            while (mParent != null && mParent.GetType() != typeof(AKlistDayPage))
+            {
+                mParent = mParent.Parent;
+            }
+
+            if (mParent == null)
+            {
+                throw new Exception(
+                    string.Format("FindParentPage: Parent {0} not found for element {1}", typeof(AKlistDayPage), this));
+            }
+
+            return (AKlistDayPage)(object)mParent;
         }
 
         protected override void OnBindingContextChanged()
@@ -118,6 +160,11 @@ namespace ZKK_App.aklist
             // the parents binding context.
             //View.BindingContext = BindingContext;
             base.OnBindingContextChanged();
+            CheckLike();
+        }
+
+        private void CheckLike()
+        {
             try
             {
                 if (akinterest.LikeManagement.CheckName(titleLabel.Text))
@@ -134,6 +181,13 @@ namespace ZKK_App.aklist
                 likeLabel.Text = " Konnte Daten nciht laden: " + e.Message;
             }
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            this.CheckLike();
+        }
+
     }
 
     public class AKListItemCellDestructiveOnly : AKlistItemCell

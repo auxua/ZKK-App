@@ -102,5 +102,10 @@ namespace ZKK_App.akinterest
         {
             return database.FindAll(item => item.Day == d);
         }
+
+        public ObservableCollection<AKlistItem> GetObservableItems(string d)
+        {
+            return new ObservableCollection<AKlistItem>(this.GetItems(d));
+        }
     }
 }

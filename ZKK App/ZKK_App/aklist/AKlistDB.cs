@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.IO;
@@ -95,6 +96,11 @@ namespace ZKK_App.aklist
         public IEnumerable<AKlistItem> GetItems(string d)
         {
             return database.FindAll(item => item.Day == d);
+        }
+
+        public ObservableCollection<AKlistItem> GetObservableItems(string d)
+        {
+            return new ObservableCollection<AKlistItem>(this.GetItems(d));
         }
     }
 }

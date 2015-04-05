@@ -61,7 +61,8 @@ namespace ZKK_App.akinterest
 
             while ((s = sr.ReadLine()) != null)
             {
-                Likes.Add(s);
+                if (!Likes.Contains(s))
+                    Likes.Add(s);
             }
 
             sr.Close();
@@ -86,7 +87,7 @@ namespace ZKK_App.akinterest
         /// </summary>
         public static void AddLike(string name)
         {
-            // Chack for valid database
+            // Check for valid database
             if (Likes == null)
             {
                 LoadAKLikes();
@@ -105,12 +106,12 @@ namespace ZKK_App.akinterest
         /// </summary>
         public static void RemoveLike(string name)
         {
-            // Chack for valid database
+            // Check for valid database
             if (Likes == null)
             {
                 LoadAKLikes();
             }
-            // Add element
+            // remove element
             if (Likes.Contains(name))
             {
                 Likes.Remove(name);
