@@ -1,9 +1,2 @@
-AK Blubb1 verschoben!#|#Der AK Blubb wurde verschoben, weil die AK-Leiterin von einer Mate-Flasche überrollt wurde.#|#Mo, 23:23
-AK Mate1 fällt aus!#|#Der AK Mate wurde abgesagt, da der Don die Mate-Flasche für einen Ausflug gestohlen hat.#|#Mo, 22:59
-ZIS1 lebt!#|#Hallo, ich bin ZIS und fühle mich hässlich, aber das ist OK...#|#So, 00:01
-AK Blubb2 verschoben!#|#Der AK Blubb wurde verschoben, weil die AK-Leiterin von einer Mate-Flasche überrollt wurde.#|#Mo, 23:23
-AK Mate2 fällt aus!#|#Der AK Mate wurde abgesagt, da der Don die Mate-Flasche für einen Ausflug gestohlen hat.#|#Mo, 22:59
-ZIS lebt2!#|#Hallo, ich bin ZIS und fühle mich hässlich, aber das ist OK...#|#So, 00:01
-AK Blubb3 verschoben!#|#Der AK Blubb wurde verschoben, weil die AK-Leiterin von einer Mate-Flasche überrollt wurde.#|#Mo, 23:23
-AK Mate3 fällt aus!#|#Der AK Mate wurde abgesagt, da der Don die Mate-Flasche für einen Ausflug gestohlen hat.#|#Mo, 22:59
-ZIS lebt!#|#Hallo, ich bin ZIS und fühle mich hässlich, aber das ist OK...#|#So, 00:01
+Eine neuere Nachricht#|#Dies ist nur ein Test#|#Fri, 18:43
+APP lebt!#|#Hallo, ich bin die App!#|#So, 00:01
