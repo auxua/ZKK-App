@@ -25,14 +25,50 @@ namespace ZKK_App.WinPhone
             return true;
         }
 
+        public bool isFilePresent(string fileName)
+        {
+            bool fileExists = true;
+            Stream fileStream = null;
+            StorageFile file = null;
+
+            // Get the local folder.
+            StorageFolder local = Windows.Storage.ApplicationData.Current.LocalFolder;
+
+            // Create a new folder name DataFolder.
+            var dfolder = local.CreateFolderAsync("Data", CreationCollisionOption.OpenIfExists).AsTask().Result;
+            
+            try
+            {
+                file = dfolder.GetFileAsync(fileName).AsTask().Result;
+                fileStream = file.OpenStreamForReadAsync().GetAwaiter().GetResult();
+                fileStream.Dispose();
+            }
+            catch (Exception)
+            {
+                // If the file dosn't exits it throws an exception, make fileExists false in this case 
+                fileExists = false;
+            }
+            finally
+            {
+                if (fileStream != null)
+                {
+                    fileStream.Dispose();
+                }
+            }
+
+            return fileExists;
+        }
+
         async Task<bool> CopyAssetsAsync()
         {
             Windows.ApplicationModel.Package package = Windows.ApplicationModel.Package.Current;
             Windows.Storage.StorageFolder installedLocation = package.InstalledLocation;
 
             //String FilesDir = Path.Combine(installedLocation.Path, "Files");
-            StorageFolder FilesFolder = await installedLocation.GetFolderAsync("Files");
-            var fFiles = await FilesFolder.GetFilesAsync();
+            StorageFolder FilesFolder = installedLocation.GetFolderAsync("Files").AsTask().Result;
+            //StorageFolder FilesFolder = installedLocation.GetFolderAsync("Files").GetResults();
+            //var fFiles = FilesFolder.GetFilesAsync().GetResults();
+            var fFiles = FilesFolder.GetFilesAsync().AsTask().Result;
             //var fFiles = fFilesT.GetResults();
 
             // On Windows Phone, Copy from Files/ to Data/
@@ -43,12 +79,18 @@ namespace ZKK_App.WinPhone
             StorageFolder local = Windows.Storage.ApplicationData.Current.LocalFolder;
 
             // Create a new folder name DataFolder.
-            var dfolder = await local.CreateFolderAsync("Data", CreationCollisionOption.OpenIfExists);
+            var dfolder = local.CreateFolderAsync("Data", CreationCollisionOption.OpenIfExists).AsTask().Result;
             
             foreach (var file in fFiles)
             {
                 // Get the File Name
                 string theFile = Path.GetFileName(file.Path);
+
+                // Check whether File is existing (on existing: quit)
+                if (this.isFilePresent(theFile))
+                {
+                    continue;
+                }
 
                 // Get a Stream of the target File
                 var targetFile = dfolder.CreateFileAsync(theFile, CreationCollisionOption.ReplaceExisting).AsTask().Result;
@@ -63,7 +105,7 @@ namespace ZKK_App.WinPhone
                 // Copy contents and close Files!
                 sourceStream.CopyTo(targetStream);
                 sourceStream.Close();
-                targetStream.Flush();
+                //targetStream.Flush();
                 targetStream.Close();
 
                 /*

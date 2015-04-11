@@ -71,7 +71,14 @@ namespace ZKK_App
         
         public MenuPage()
         {
-            Icon = "menu.png";
+            if (Device.OS == TargetPlatform.WinPhone)
+            {
+                Icon = "Toolkit.Content/ApplicationBar.Select.png";
+            }
+            else
+            {
+                Icon = "menu.png";
+            }
             Title = "Navigation"; // The Title property must be set.
             // Use RWTH-Blue for Background
             BackgroundColor = Color.FromHex("00549F");
