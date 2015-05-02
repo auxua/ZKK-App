@@ -60,22 +60,25 @@ namespace ZKK_App.Droid
 			public const int list = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int menu = 2130837509;
+			public const int mensa = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int news = 2130837510;
+			public const int menu = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int pin = 2130837511;
+			public const int news = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int refresh = 2130837512;
+			public const int pin = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int rss = 2130837513;
+			public const int refresh = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int thumbsup = 2130837514;
+			public const int rss = 2130837514;
+			
+			// aapt resource value: 0x7f02000b
+			public const int thumbsup = 2130837515;
 			
 			static Drawable()
 			{

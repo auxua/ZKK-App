@@ -149,6 +149,7 @@
     <Content Include="house.png" />
     <Content Include="info.png" />
     <Content Include="list.png" />
+    <Content Include="mensa.png" />
     <Content Include="menu.png" />
     <Content Include="news.png" />
     <Content Include="pin.png" />
@@ -184,9 +185,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Xamarin.Forms.1.4.1.6349\lib\WP80\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\" />
   </ItemGroup>
   <Import Project="..\ZKK_App\ZKK_App.projitems" Label="Shared" Condition="Exists('..\ZKK_App\ZKK_App.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />

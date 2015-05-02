@@ -51,6 +51,12 @@ namespace ZKK_App.interfaces
             // Tell the Button what to do on action
             button.Clicked += onButtonClicked;
 
+            
+            entry.Completed += (sender, e) =>
+                {
+                    button.Focus();
+                    this.onButtonClicked(sender, e);
+                };
 
             // Create the Layout
             Title = "Raumfinder";
@@ -63,7 +69,14 @@ namespace ZKK_App.interfaces
                 VerticalOptions = LayoutOptions.Center
             };
 
-            Content = stack;
+            ScrollView scroll = new ScrollView
+            {
+                Orientation = ScrollOrientation.Vertical,
+                Content = stack
+            };
+
+
+            Content = scroll;
 		}
 
         /// <summary>

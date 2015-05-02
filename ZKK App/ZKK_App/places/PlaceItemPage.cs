@@ -55,7 +55,7 @@ namespace ZKK_App.places
 
             var layout = new StackLayout
             {
-                Padding = new Thickness(20, 0, 20, 0),
+                Padding = new Thickness(20, 10, 20, 10),
                 Orientation = StackOrientation.Vertical,
                 HorizontalOptions = LayoutOptions.Center,
                 Children = { titleLabel, image, detailLabel, commentLabel },

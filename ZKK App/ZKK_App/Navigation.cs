@@ -289,6 +289,13 @@ namespace ZKK_App
                 TargetType = typeof(interfaces.PlacesPage)
             });
 
+            this.Add(new NavMenuItem()
+            {
+                Title = "Mensabewertung",
+                Icon = "mensa.png",
+                TargetType = typeof(interfaces.MensaPage)
+            });
+
             // Billing is deactivated due to no API at the moment...
 
             /*this.Add(new MenuItem()
