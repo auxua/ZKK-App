@@ -23,7 +23,7 @@ namespace ZKK_App.interfaces
 
 		public MensaPage ()
 		{
-			InitializeComponent ();
+			//InitializeComponent ();
 
             mensen = new List<string> { "Mensa Academica", "Bistro", "Ahornstraße", "Mensa Vita" };
             ratings = new List<string> { "Viel besser", "Etwas besser", "Etwa gleich", "schlechter", "Viel schlechter" };
@@ -158,7 +158,8 @@ namespace ZKK_App.interfaces
             {
                 button.Focus();
                 //button.Command.Execute(null);
-                this.OnButtonClicked(sender, e);
+                await Task.Factory.StartNew(() => this.OnButtonClicked(sender, e));
+                //await this.OnButtonClicked(sender, e);
             };
 
             homeEntry.Completed += (sender, e) =>

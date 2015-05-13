@@ -26,19 +26,36 @@ namespace ZKK_App.interfaces
         public PlanPage()
         {
             //InitializeComponent ();
-
-            var path = DependencyService.Get<IPersonalStorage>().GetFullFilePath("plan.jpg");
-
-            // create base 64 encoded image from path
-            // provide read access to the file
-            FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
-            // Create a byte array of file stream length
-            byte[] ImageData = new byte[fs.Length];
-            // Read block of bytes from stream into the byte array
-            fs.Read(ImageData, 0, System.Convert.ToInt32(fs.Length));
-            // Close the File Stream
-            fs.Close();
-            String base64String = Convert.ToBase64String(ImageData);
+            String base64String;
+            // If the Device is a phone, use smaller image
+            if (Device.Idiom == TargetIdiom.Phone)
+            {
+                var path = DependencyService.Get<IPersonalStorage>().GetFullFilePath("plan.jpg");
+                // create base 64 encoded image from path
+                // provide read access to the file
+                FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
+                // Create a byte array of file stream length
+                byte[] ImageData = new byte[fs.Length];
+                // Read block of bytes from stream into the byte array
+                fs.Read(ImageData, 0, System.Convert.ToInt32(fs.Length));
+                // Close the File Stream
+                fs.Close();
+                base64String = Convert.ToBase64String(ImageData);
+            }
+            else
+            {
+                var path = DependencyService.Get<IPersonalStorage>().GetFullFilePath("planLarge.jpg");
+                // create base 64 encoded image from path
+                // provide read access to the file
+                FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
+                // Create a byte array of file stream length
+                byte[] ImageData = new byte[fs.Length];
+                // Read block of bytes from stream into the byte array
+                fs.Read(ImageData, 0, System.Convert.ToInt32(fs.Length));
+                // Close the File Stream
+                fs.Close();
+                base64String = Convert.ToBase64String(ImageData);
+            }
             // embed in HTML
             string html = "<html><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=0.20, maximum-scale=3.0 user-scalable=1\" /></head><body><img src=\"data:image/jpg;base64," + base64String + "\" style=\"width=100%\" /></body></html>";
             // Create webview content for the string

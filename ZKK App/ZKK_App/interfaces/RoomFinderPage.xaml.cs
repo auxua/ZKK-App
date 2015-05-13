@@ -18,7 +18,7 @@ namespace ZKK_App.interfaces
         Dictionary<string, string> rooms;
         public RoomFinderPage ()
 		{
-			InitializeComponent ();
+			//InitializeComponent ();
 
             
             rooms = new Dictionary<string,string>();

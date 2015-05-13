@@ -12,7 +12,7 @@ namespace ZKK_App.interfaces
 	{
 		public BillingPage ()
 		{
-			InitializeComponent ();
+			//InitializeComponent ();
 
             StackLayout stack = new StackLayout
             {
