@@ -6,7 +6,7 @@
     <Language code="de-DE" />
     <Language code="en" />
   </Languages>
-  <App xmlns="" ProductID="{04748bd3-1e18-4e01-a416-9a9a5fc0f842}" Title="ZKK App" RuntimeType="Silverlight" Version="1.1.1" Genre="apps.normal" Author="Arno Schmetz" Description="Die App zur ZKK Konferenz." Publisher="Arno Schmetz" PublisherID="{cce0e449-8991-4486-8ca3-467115cc07fe}">
+  <App xmlns="" ProductID="{04748bd3-1e18-4e01-a416-9a9a5fc0f842}" Title="ZKK App" RuntimeType="Silverlight" Version="1.1.2" Genre="apps.normal" Author="Arno Schmetz" Description="Die App zur ZKK Konferenz." Publisher="Arno Schmetz" PublisherID="{cce0e449-8991-4486-8ca3-467115cc07fe}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
